@@ -1,4 +1,5 @@
 body {
+	overflow-x: hidden;
 	background-color: #303841;
 	color: #eeeeee;
 	font-family: "Courier New", Courier, monospace;
@@ -6,9 +7,10 @@ body {
 
 /* ---Header--- */
 header {
-	/* position: ;*/
+	position: fixed;
+	top: 0;
 	width: 100vw;
-	height: 10vh;
+	height: 12vh;
 	background-color: #d72323;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
@@ -17,6 +19,9 @@ header {
 }
 
 #logo {
+	float: left;
+	display: inline;
+	margin: 10px;
 	/*position: relative;
     width: ;
     height: ;*/
@@ -24,22 +29,34 @@ header {
 
 #firmenname {
 	color: #eeeeee;
-	font-size: 4em;
+	font-size: 2em;
+	text-decoration: none;
 }
 
-#searchbar {
+#suchfeld {
 	background-color: #3a4750;
-	/*position: relative;
-    width: ;
-    height: ;*/
+	float: right;
+	margin-right: 2%;
+	/*width: ;*/
+	height: 20px;
 	border-radius: 30px;
+	color: #eeeeee;
 }
 
 /* ---Main--- */
 #focus {
 }
 
+#focus,
+.card img:hover {
+	transform: scale(1.1);
+}
+
 #cardsection {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: repeat(3, 100px);
+	grid-gap: 20px;
 }
 
 .card {
@@ -47,7 +64,8 @@ header {
 
 /* ---Footer--- */
 footer {
-	/* position: ;*/
+	position: fixed;
+	bottom: 0;
 	width: 100vw;
 	height: 5vh;
 	background-color: #3a4750;
