@@ -1,0 +1,55 @@
+body {
+	background-color: #303841;
+	color: #eeeeee;
+	font-family: "Courier New", Courier, monospace;
+}
+
+/* ---Header--- */
+header {
+	/* position: ;*/
+	width: 100vw;
+	height: 10vh;
+	background-color: #d72323;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#identity {
+}
+
+#logo {
+	/*position: relative;
+    width: ;
+    height: ;*/
+}
+
+#firmenname {
+	color: #eeeeee;
+	font-size: 4em;
+}
+
+#searchbar {
+	background-color: #3a4750;
+	/*position: relative;
+    width: ;
+    height: ;*/
+	border-radius: 30px;
+}
+
+/* ---Main--- */
+#focus {
+}
+
+#cardsection {
+}
+
+.card {
+}
+
+/* ---Footer--- */
+footer {
+	/* position: ;*/
+	width: 100vw;
+	height: 5vh;
+	background-color: #3a4750;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
