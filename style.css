@@ -1,5 +1,5 @@
 body {
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 	margin: 0px;
 	background-color: #303841;
 	color: #eeeeee;
@@ -13,28 +13,30 @@ header {
 	height: 12vh;
 	background-color: #d72323;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
 }
 
 #identity {
+	display: flex;
+	align-items: center;
 }
 
 #logo img {
-	float: left;
-	/*position: relative;*/
 	width: 12vh;
 }
 
 #firmenname {
-	/*padding: 6vh 0;*/
 	color: #eeeeee;
 	font-size: 2em;
 	text-decoration: none;
 }
 
 #suchfeld {
+	margin-right: 1vw;
 	background-color: #3a4750;
-	float: right;
-	margin-right: 2%;
 	/*width: ;*/
 	height: 20px;
 	border: none;
@@ -48,14 +50,12 @@ header {
 }
 
 /* ---Main--- */
-
 main {
 }
 
 #focus {
-	width: 100vw;
-	height: 40%;
-	border: 3px solid white;
+	/* Ragt noch über den Bildschirm */
+	/* border: 3px solid white; */
 }
 
 #focus,
@@ -65,21 +65,59 @@ main {
 
 #cardsection {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(3, 100px);
 	grid-gap: 50px;
 }
 
 .card {
 	border: 3px solid wheat;
+	border-radius: 3px;
+}
+
+#card1 {
+	grid-column: 1;
+	grid-row: 1;
+}
+
+#card2 {
+	grid-column: 2;
+	grid-row: 1;
 }
 
 /* ---Footer--- */
 footer {
+	/* Ragt noch über den Bildschirm */
 	position: fixed;
 	bottom: 0;
-	width: 100vw;
-	height: 5vh;
+	width: 100%;
+	height: 7vh;
 	background-color: #3a4750;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+#footerList {
+	padding-left: 0;
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: 1fr;
+	grid-gap: 10px;
+	text-align: center;
+}
+
+.footerItem {
+	border-radius: 10px;
+	padding: 7px;
+	transition: 0.3s ease-in-out;
+}
+
+.footerItem a {
+	color: inherit;
+	text-decoration: none;
+}
+
+.footerItem:hover {
+	color: #3a4750;
+	background-color: #eeeeee;
 }
