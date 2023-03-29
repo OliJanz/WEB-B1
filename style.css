@@ -126,4 +126,11 @@ footer {
 	text-decoration: none;
 }
 
-/* TODO: min-height bei Header und Footer */
+@media (max-width: 600px) {
+	.firmenname {
+		color: black;
+		font-size: 1rem;
+	}
+}
+
+/* TODO: min-height bei Header und Footer und media queries*/
