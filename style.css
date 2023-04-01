@@ -35,11 +35,6 @@ header {
 	text-decoration: none;
 }
 
-#mobileSearch {
-	height: 20px;
-	width: 20px;
-}
-
 #suchfeld {
 	margin-right: 1vw;
 	background-color: #3a4750;
@@ -56,7 +51,101 @@ header {
 }
 
 #mobile {
+	margin-right: 15px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+#hamburgerMenu {
 	display: none;
+}
+
+#mobileSearch {
+	display: none;
+	margin-right: 15px;
+	height: 25px;
+	width: 25px;
+}
+
+#hamburgerCheck {
+	display: block;
+	margin: 0;
+	height: 32px;
+	width: 32px;
+	z-index: 3;
+	opacity: 0;
+	cursor: pointer;
+}
+
+#hamburgerLines {
+	display: block;
+	margin-top: -32px;
+	height: 26px;
+	width: 32px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	z-index: 2;
+}
+
+.line {
+	background: #eeeeee;
+	height: 4px;
+	border-radius: 10px;
+}
+
+#line1 {
+	transform-origin: 0% 0%;
+	transition: transform 0.4s ease-in-out;
+}
+
+#line2 {
+	transition: transform 0.2s ease-in-out;
+}
+
+#line3 {
+	transform-origin: 0% 100%;
+	transition: transform 0.4s ease-in-out;
+}
+
+#hamburgerList {
+	position: absolute;
+	top: 0;
+	left: 0;
+	margin-top: 12vh; /* ?vllt padding? */
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	text-align: center;
+	list-style: none;
+	padding: 0;
+	box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5); /* !Farbe ändern */
+	transform: translate(-150%);
+	transition: transform 0.5s ease-in-out;
+}
+
+.hamburgerItem a {
+	text-decoration: none;
+	color: #eeeeee;
+}
+
+#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerList {
+	transform: translateX(0);
+}
+
+#hamburgerMenu #hamburgerCheck[type="checkbox"]:checked #line1 {
+	transform: rotate(45deg);
+}
+
+#hamburgerMenu #hamburgerCheck[type="checkbox"]:checked ~ #line2 {
+	transform: scaleY(0);
+}
+
+#hamburgerMenu #hamburgerCheck[type="checkbox"]:checked ~ #line3 {
+	transform: rotate(-45deg);
 }
 
 /* *---Main--- */
@@ -141,8 +230,16 @@ footer {
 		display: none;
 	}
 
-	#mobile {
-		display: inline;
+	#hamburgerMenu {
+		display: block;
+	}
+
+	#mobileSearch {
+		display: block;
+	}
+
+	footer {
+		display: none;
 	}
 }
 
