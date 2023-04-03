@@ -122,29 +122,38 @@ header {
 	text-align: center;
 	list-style: none;
 	padding: 0;
-	box-shadow: inset 0 0 2000px rgba(255, 255, 255, 0.5); /* !Farbe ändern */
+	box-shadow: inset 0 0 2000px rgba(238, 238, 238, 0.9); /* !Farbe ändern */
 	transform: translate(-150%);
 	transition: transform 0.5s ease-in-out;
 }
 
 .hamburgerItem a {
 	text-decoration: none;
-	color: #eeeeee;
+	color: #303841;
+	font-size: 2rem;
+	border-radius: 10px;
+	padding: 10px;
+	transition: 0.3s ease-in-out;
+}
+
+.hamburgerItem a:hover {
+	color: #d72323;
+	background-color: #303841;
 }
 
 #hamburgerMenu #hamburgerCheck:checked ~ #hamburgerList {
 	transform: translateX(0);
 }
 
-#hamburgerMenu #hamburgerCheck[type="checkbox"]:checked #line1 {
+#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerLines #line1 {
 	transform: rotate(45deg);
 }
 
-#hamburgerMenu #hamburgerCheck[type="checkbox"]:checked ~ #line2 {
+#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerLines #line2 {
 	transform: scaleY(0);
 }
 
-#hamburgerMenu #hamburgerCheck[type="checkbox"]:checked ~ #line3 {
+#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerLines #line3 {
 	transform: rotate(-45deg);
 }
 
