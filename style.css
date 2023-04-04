@@ -3,7 +3,8 @@ body {
 	margin: 0px;
 	background-color: #303841;
 	color: #eeeeee;
-	font-family: "Courier New", Courier, monospace;
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
 }
 
 /* *---Header--- */
@@ -32,27 +33,28 @@ header {
 #firmenname {
 	color: #eeeeee;
 	font-size: 2em;
+	font-family: Helvetica;
 	text-decoration: none;
 }
 
 #suchfeld {
 	margin-right: 1vw;
 	background-color: #3a4750;
-	/* ?width: ;*/
-	height: 20px;
+	width: 160px;
+	height: 25px;
 	border: none;
 	border-radius: 30px;
 	color: #eeeeee;
 	background-image: url("resources/searchIco.png");
 	background-size: 10%;
-	background-position: 5px 3px;
+	background-position: 6px 5px;
 	background-repeat: no-repeat;
 	padding-left: 30px;
 }
 
 #mobile {
 	margin-right: 15px;
-	display: flex;
+	display: none;
 	flex-direction: row;
 	justify-content: space-between;
 }
@@ -237,6 +239,10 @@ footer {
 @media (max-width: 600px) {
 	#suchfeld {
 		display: none;
+	}
+
+	#mobile {
+		display: flex;
 	}
 
 	#hamburgerMenu {
