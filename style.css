@@ -285,6 +285,7 @@ footer {
 
 /* *---Mobil-Ansicht--- */
 @media (max-width: 600px) {
+	/* *---Header--- */
 	#suchfeld {
 		display: none;
 	}
@@ -301,6 +302,9 @@ footer {
 		display: block;
 	}
 
+	/* *---Main--- */
+
+	/* *---Footer--- */
 	footer {
 		display: none;
 	}
