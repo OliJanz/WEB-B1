@@ -194,7 +194,8 @@ header {
 
 /* *---Main--- */
 main {
-	margin-top: 12vh;
+        margin-top: 12vh;
+        margin-bottom: 7vh;
 }
 
 /* *---Startseite--- */
@@ -303,6 +304,9 @@ footer {
 	}
 
 	/* *---Main--- */
+        main {
+                margin-bottom: 0;
+        }
 
 	/* *---Footer--- */
 	footer {
