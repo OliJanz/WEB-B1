@@ -19,6 +19,7 @@ header {
 	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
+	z-index: 2;
 }
 
 #identity {
@@ -194,23 +195,27 @@ header {
 
 /* *---Main--- */
 main {
-	margin-top: 13vh;
-	margin-bottom: 8vh;
-
 	margin: 13vh 1vw 8vh;
 }
 
 /* *---Startseite--- */
 #focus {
-	/* !Ragt noch über den Bildschirm */
-	/* !border: 3px solid white; */
+	margin-top: -1vh;
+	margin-left: -1vw;
+	margin-right: -1vw;
 }
 
-#focus,
-.card img:hover {
+#focus img {
+	width: 100%;
+	transition: 0.3s ease-in-out;
+	z-index: 1;
+}
+
+#focus img:hover {
 	transform: scale(1.1);
 }
 
+/* 
 #cardsection {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -231,7 +236,7 @@ main {
 #card2 {
 	grid-column: 2;
 	grid-row: 1;
-}
+} */
 
 /* *---Über Uns--- */
 
