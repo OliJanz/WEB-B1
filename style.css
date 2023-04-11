@@ -96,7 +96,7 @@ header {
 	padding-left: 10px;
 }
 
-#suchCheck:checked ~ #mobileSuchfeld {
+#suchCheck:checked~#mobileSuchfeld {
 	display: block;
 }
 
@@ -178,19 +178,19 @@ header {
 	background-color: #303841;
 }
 
-#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerList {
+#hamburgerMenu #hamburgerCheck:checked~#hamburgerList {
 	transform: translateX(0);
 }
 
-#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerLines #line1 {
+#hamburgerMenu #hamburgerCheck:checked~#hamburgerLines #line1 {
 	transform: rotate(45deg);
 }
 
-#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerLines #line2 {
+#hamburgerMenu #hamburgerCheck:checked~#hamburgerLines #line2 {
 	transform: scaleY(0);
 }
 
-#hamburgerMenu #hamburgerCheck:checked ~ #hamburgerLines #line3 {
+#hamburgerMenu #hamburgerCheck:checked~#hamburgerLines #line3 {
 	transform: rotate(-45deg);
 }
 
@@ -327,6 +327,72 @@ main {
 }
 
 /* *---Eingabe--- */
+.formular {
+	position: relative;
+	border: 3px;
+	background-color: #3a4750;	
+}
+
+
+button {
+	display: block;
+	
+	font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+		sans-serif;
+		padding: 8px;
+		cursor: pointer;
+		font-size: 15px;
+}
+
+.form-box > button[type="submit"]:hover{
+	background-color: #8d1212;
+}
+
+.formular #firstname, #lastname,#email{
+	margin-left: 1%;
+	display: block;
+	padding: 50px;
+	float: left;
+	text-align: center;
+	
+
+}
+
+.check-box{
+clear: left;
+padding: 16px;
+}
+
+
+
+
+.form-box>label:first-child {
+	display: block;
+
+}
+
+.form-box>label:last-child {
+	position: relative;
+	vertical-align: middle;
+	bottom: 3px;
+}
+
+.form-box>input[type="text"],
+.form-box>input[type="email"] {
+	padding: 4px;
+	border-style: hidden;
+	border: 1px solid;
+}
+
+.form-box button {
+	margin-left: 45%;
+	color: white;
+	background-color: #D72323;
+	
+}
+
+
+
 
 /* *---Bestätigung--- */
 
@@ -334,8 +400,7 @@ main {
 	text-align: center;
 }
 
-#check {
-}
+#check {}
 
 /* *---Footer--- */
 footer {
@@ -378,6 +443,7 @@ footer {
 
 /* *---Mobil-Ansicht--- */
 @media (max-width: 600px) {
+
 	/* *---Header--- */
 	#suchfeld {
 		display: none;
