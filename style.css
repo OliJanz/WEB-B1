@@ -203,6 +203,7 @@ main {
 	margin-top: -1vh;
 	margin-left: -1vw;
 	margin-right: -1vw;
+	overflow: hidden;
 }
 
 #focus img {
@@ -220,6 +221,11 @@ main {
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: repeat(3, 1fr);
 	grid-gap: 5px;
+}
+
+.card {
+	overflow: hidden;
+	border-radius: 5px;
 }
 
 .card img {
@@ -307,6 +313,10 @@ footer {
 	/* *---Main--- */
 	main {
 		margin-bottom: 0;
+	}
+
+	#cardSection {
+		display: block;
 	}
 
 	/* *---Footer--- */
