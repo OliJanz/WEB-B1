@@ -159,6 +159,7 @@ header {
 	text-align: center;
 	list-style: none;
 	box-shadow: inset 0 0 2000px rgba(238, 238, 238, 0.9); /* !Farbe ändern */
+	-webkit-box-shadow: inset 0 0 1000px rgba(238, 238, 238, 0.9);
 	transform: translate(-150%);
 	transition: transform 0.5s ease-in-out;
 }
@@ -251,6 +252,13 @@ main {
 /* *---Eingabe--- */
 
 /* *---Bestätigung--- */
+
+#textBuchung {
+	text-align: center;
+}
+
+#check {
+}
 
 /* *---Footer--- */
 footer {
