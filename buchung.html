@@ -1,97 +1,119 @@
 <!DOCTYPE html>
 <html lang="de">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="style.css" />
-		<link
-			rel="shortcut icon"
-			href="resources/favicon.ico"
-			type="image/x-icon"
-		/>
-		<link rel="icon" href="resources/LogoIcon.png" type="image/x-icon" />
-		<title>FlexEvent</title>
-	</head>
-	<body>
-		<header>
-			<div id="identity">
-				<div id="logo">
-					<a href="index.html">
-						<img src="resources/Logo.png" alt="Firmenlogo" />
-					</a>
-				</div>
-				<a href="index.html" id="firmenname">FLEXEVENT</a>
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="style.css" />
+	<link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon" />
+	<link rel="icon" href="resources/LogoIcon.png" type="image/x-icon" />
+	<title>FlexEvent</title>
+</head>
+
+<body>
+	<header>
+		<div id="identity">
+			<div id="logo">
+				<a href="index.html">
+					<img src="resources/Logo.png" alt="Firmenlogo" />
+				</a>
 			</div>
-			<input type="text" placeholder="Suchen" id="suchfeld" />
-			<div id="mobile">
-				<div id="mobileSearch">
-					<input type="checkbox" name="" id="suchCheck" />
-					<img
-						src="resources/searchIco.png"
-						alt="Suchen"
-						id="mobileSearchIcon"
-					/>
-					<input
-						type="text"
-						placeholder="Suchen"
-						id="mobileSuchfeld"
-					/>
+			<a href="index.html" id="firmenname">FLEXEVENT</a>
+		</div>
+		<input type="text" placeholder="Suchen" id="suchfeld" />
+		<div id="mobile">
+			<div id="mobileSearch">
+				<input type="checkbox" name="" id="suchCheck" />
+				<img src="resources/searchIco.png" alt="Suchen" id="mobileSearchIcon" />
+				<input type="text" placeholder="Suchen" id="mobileSuchfeld" />
+			</div>
+			<div id="hamburgerMenu">
+				<input type="checkbox" name="" id="hamburgerCheck" />
+				<div id="hamburgerLines">
+					<span class="line" id="line1"></span>
+					<span class="line" id="line2"></span>
+					<span class="line" id="line3"></span>
 				</div>
-				<div id="hamburgerMenu">
-					<input type="checkbox" name="" id="hamburgerCheck" />
-					<div id="hamburgerLines">
-						<span class="line" id="line1"></span>
-						<span class="line" id="line2"></span>
-						<span class="line" id="line3"></span>
-					</div>
-					<ul id="hamburgerList">
-						<li class="hamburgerItem">
-							<a href="ueberUns.html" id="aboutUs"> Über uns </a>
-						</li>
-						<li class="hamburgerItem">
-							<a href="datenschutz.html" id="datenschutz">
-								Datenschutz
-							</a>
-						</li>
-						<li class="hamburgerItem">
-							<a href="index.html" id="home"> Startseite </a>
-						</li>
-						<li class="hamburgerItem">
-							<a href="impressum.html" id="impressum">
-								Impressum
-							</a>
-						</li>
-						<li class="hamburgerItem">
-							<a href="agb.html" id="agb"> AGB </a>
-						</li>
-					</ul>
+				<ul id="hamburgerList">
+					<li class="hamburgerItem">
+						<a href="ueberUns.html" id="aboutUs"> Über uns </a>
+					</li>
+					<li class="hamburgerItem">
+						<a href="datenschutz.html" id="datenschutz">
+							Datenschutz
+						</a>
+					</li>
+					<li class="hamburgerItem">
+						<a href="index.html" id="home"> Startseite </a>
+					</li>
+					<li class="hamburgerItem">
+						<a href="impressum.html" id="impressum">
+							Impressum
+						</a>
+					</li>
+					<li class="hamburgerItem">
+						<a href="agb.html" id="agb"> AGB </a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</header>
+	<main>
+		<!-- !Hier die Seite konstruieren -->
+		<h1>Zu Kontaktzwecken, sowie der Bestätigung des Buchungsvertrages brauchen wir noch ein paar Daten von ihnen:
+		</h1>
+
+		<form method="post">
+			<div class="formular">
+				<div class="form-box" id="firstname">
+					<label for="firstname">Vorname</label>
+					<input type="text" name="firstname" required>
+				</div>
+				<div class="form-box" id="lastname">
+					<label for="lastname">Name</label>
+					<input type="text" name="lastname" required>
+				</div>
+				<div class="form-box" id="email">
+					<label for="email">E-Mail</label>
+					<input type="email" name="email" required>
+				</div>
+				<div class="form-box check-box">
+					<input type="checkbox" id="agb" name="agb" required>
+					<label for="agb">Ich habe die <a href="/agb.html">AGB's</a> gelesen und akzeptiere diese</label>
+				</div>
+				<div class="form-box check-box">
+					<input type="checkbox" id="datenschutz" name="datenschutz" required>
+					<label for="datenschutz">Ich habe die <a href="/datenschutz.html">Datenschutzverordnung</a> gelesen und akzeptiere diese</label>
+				</div>
+				<div class="form-box">
+					<button type="submit">Verbindlich buchen</button>
 				</div>
 			</div>
-		</header>
-		<main>
-			<!-- !Hier die Seite konstruieren -->
-		</main>
-		<footer>
-			<ul id="footerList">
-				<li class="footerItem">
-					<a href="ueberUns.html" id="aboutUs"> Über uns </a>
-				</li>
-				<li class="footerItem">
-					<a href="datenschutz.html" id="datenschutz">
-						Datenschutz
-					</a>
-				</li>
-				<li class="footerItem">
-					<a href="index.html" id="home"> Startseite </a>
-				</li>
-				<li class="footerItem">
-					<a href="impressum.html" id="impressum"> Impressum </a>
-				</li>
-				<li class="footerItem">
-					<a href="agb.html" id="agb"> AGB </a>
-				</li>
-			</ul>
-		</footer>
-		<!--</script src="a.js">-->
-	</body>
+		</form>
+
+	</main>
+	<footer>
+		<ul id="footerList">
+			<li class="footerItem">
+				<a href="ueberUns.html" id="aboutUs"> Über uns </a>
+			</li>
+			<li class="footerItem">
+				<a href="datenschutz.html" id="datenschutz">
+					Datenschutz
+				</a>
+			</li>
+			<li class="footerItem">
+				<a href="index.html" id="home"> Startseite </a>
+			</li>
+			<li class="footerItem">
+				<a href="impressum.html" id="impressum"> Impressum </a>
+			</li>
+			<li class="footerItem">
+				<a href="agb.html" id="agb"> AGB </a>
+			</li>
+		</ul>
+	</footer>
+	<!--</script src="a.js">-->
+</body>
+
 </html>
