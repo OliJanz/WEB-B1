@@ -198,7 +198,7 @@ main {
 	margin: 13vh 1vw 8vh;
 }
 
-/* *---Startseite--- */
+/* *---Index--- */
 #focus {
 	margin-top: -1vh;
 	margin-left: -1vw;
@@ -215,28 +215,22 @@ main {
 	transform: scale(1.1);
 }
 
-/* 
-#cardsection {
+#cardSection {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: repeat(3, 100px);
-	grid-gap: 50px;
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 5px;
 }
 
-.card {
-	border: 3px solid wheat;
-	border-radius: 3px;
+.card img {
+	width: 100%;
+	border-radius: 5px;
+	transition: 0.3s ease-in-out;
 }
 
-#card1 {
-	grid-column: 1;
-	grid-row: 1;
+.card img:hover {
+	transform: scale(1.1);
 }
-
-#card2 {
-	grid-column: 2;
-	grid-row: 1;
-} */
 
 /* *---Über Uns--- */
 
