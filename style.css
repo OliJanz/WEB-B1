@@ -197,6 +197,7 @@ header {
 /* *---Main--- */
 main {
 	margin: 13vh 1vw 8vh;
+	
 }
 
 /* *---Index--- */
@@ -402,13 +403,23 @@ main {
 }
 
 /* *---Bestätigung--- */
+.image-center{
+	display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    place-items: center;
 
+}
 #textBuchung {
 	text-align: center;
 }
 
 #check {
+	width: 400px;
+	height: 400px;
+	
 }
+
 
 /* *---Footer--- */
 footer {
