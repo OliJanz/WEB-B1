@@ -197,6 +197,11 @@ header {
 /* *---Main--- */
 main {
 	margin: 13vh 1vw 8vh;
+	display: grid;
+    height: 60vh;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    place-items: center;
 }
 
 /* *---Index--- */
@@ -399,6 +404,8 @@ main {
 }
 
 #check {
+	width: 400px;
+    height: 400px;
 }
 
 /* *---Footer--- */
