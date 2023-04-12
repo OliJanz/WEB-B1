@@ -197,7 +197,6 @@ header {
 /* *---Main--- */
 main {
 	margin: 13vh 1vw 8vh;
-	
 }
 
 /* *---Index--- */
@@ -403,12 +402,11 @@ main {
 }
 
 /* *---Bestätigung--- */
-.image-center{
+.image-center {
 	display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: 1fr;
-    place-items: center;
-
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	place-items: center;
 }
 #textBuchung {
 	text-align: center;
@@ -417,9 +415,7 @@ main {
 #check {
 	width: 400px;
 	height: 400px;
-	
 }
-
 
 /* *---Footer--- */
 footer {
@@ -487,8 +483,26 @@ footer {
 		display: block;
 	}
 
+	#info {
+		display: block;
+	}
+
 	#infoTop {
 		display: block;
+	}
+
+	#infoBottom {
+		display: block;
+	}
+
+	#eventInfo,
+	#infoImage,
+	#infoForm {
+		margin-bottom: 5px;
+	}
+
+	#stadion {
+		display: none;
 	}
 
 	/* *---Footer--- */
