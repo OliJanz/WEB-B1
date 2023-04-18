@@ -397,12 +397,12 @@ input[type="email"] {
 input:focus {
 	outline: none;
 	background-color: #d72323;
-	width: 265px;
 }
 
 .form-box button {
 	height: 64px;
 	width: 240px;
+	margin-top: 10px;
 	border-radius: 1000px;
 	border: none;
 	font-family: "Gill Sans", "Gill Sans MT", "Calibri", "Trebuchet MS",
