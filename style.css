@@ -273,8 +273,24 @@ main {
 	margin: 0;
 }
 
-#plaetze {
+#verfuegbarePlaetze {
 	font-weight: 600;
+}
+
+#plaetze {
+	display: flex;
+	flex-direction: row;
+}
+
+.dPlaetze:first-child {
+	margin-right: 15px;
+}
+
+.dPlaetze {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-right: 5px;
 }
 
 #eventInfo ul {
