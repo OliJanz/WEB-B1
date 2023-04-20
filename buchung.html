@@ -1,117 +1,157 @@
 <!DOCTYPE html>
 <html lang="de">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="style.css" />
+		<link
+			rel="shortcut icon"
+			href="resources/favicon.ico"
+			type="image/x-icon"
+		/>
+		<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
+		<title>FlexEvent</title>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="style.css" />
-	<link rel="shortcut icon" href="resources/favicon.ico" type="image/x-icon" />
-	<link rel="icon" href="resources/LogoIcon.png" type="image/x-icon" />
-	<title>FlexEvent</title>
-</head>
-
-<body id="body-buchung">
-	<header>
-		<div id="identity">
-			<div id="logo">
-				<a href="index.html">
-					<img src="resources/Logo.png" alt="Firmenlogo" />
-				</a>
-			</div>
-			<a href="index.html" id="firmenname">FLEXEVENT</a>
-		</div>
-		<input type="text" placeholder="Suchen" id="suchfeld" />
-		<div id="mobile">
-			<div id="mobileSearch">
-				<input type="checkbox" name="" id="suchCheck" />
-				<img src="resources/searchIco.png" alt="Suchen" id="mobileSearchIcon" />
-				<input type="text" placeholder="Suchen" id="mobileSuchfeld" />
-			</div>
-			<div id="hamburgerMenu">
-				<input type="checkbox" name="" id="hamburgerCheck" />
-				<div id="hamburgerLines">
-					<span class="line" id="line1"></span>
-					<span class="line" id="line2"></span>
-					<span class="line" id="line3"></span>
+	<body id="body-buchung">
+		<header>
+			<div id="identity">
+				<div id="logo">
+					<a href="index.html">
+						<img src="resources/logo.png" alt="Firmenlogo" />
+					</a>
 				</div>
-				<ul id="hamburgerList">
-					<li class="hamburgerItem">
-						<a href="ueberUns.html" id="aboutUs"> Über uns </a>
-					</li>
-					<li class="hamburgerItem">
-						<a href="datenschutz.html" id="datenschutz">
-							Datenschutz
-						</a>
-					</li>
-					<li class="hamburgerItem">
-						<a href="index.html" id="home"> Startseite </a>
-					</li>
-					<li class="hamburgerItem">
-						<a href="impressum.html" id="impressum">
-							Impressum
-						</a>
-					</li>
-					<li class="hamburgerItem">
-						<a href="agb.html" id="agb"> AGB </a>
-					</li>
-				</ul>
+				<a href="index.html" id="firmenname">FLEXEVENT</a>
 			</div>
-		</div>
-	</header>
-	<main>
-		<form method="post">
-			<div class="formular">
-				<h1 id="form-headline">Zu Kontaktzwecken, sowie der Bestätigung des Buchungsvertrages brauchen wir noch
-					ein paar Daten von ihnen:</h1>
-				<div class="inputs-container">
-					<div class="form-box" id="firstname">
-						<input type="text" name="firstname" placeholder="Vorname" required>
+			<input type="text" placeholder="Suchen" id="suchfeld" />
+			<div id="mobile">
+				<div id="mobileSearch">
+					<input type="checkbox" name="" id="suchCheck" />
+					<img
+						src="resources/searchico.png"
+						alt="Suchen"
+						id="mobileSearchIcon"
+					/>
+					<input
+						type="text"
+						placeholder="Suchen"
+						id="mobileSuchfeld"
+					/>
+				</div>
+				<div id="hamburgerMenu">
+					<input type="checkbox" name="" id="hamburgerCheck" />
+					<div id="hamburgerLines">
+						<span class="line" id="line1"></span>
+						<span class="line" id="line2"></span>
+						<span class="line" id="line3"></span>
 					</div>
-					<div class="form-box" id="lastname">
-						<input type="text" name="lastname" placeholder="Nachname" required>
-					</div>
-					<div class="form-box" id="email">
-						<input type="email" name="email" placeholder="E-Mail" required>
-					</div>
-				</div>
-				<div class="form-box check-box">
-					<input type="checkbox" id="agb" name="agb" required>
-					<label for="agb">Ich habe die <a href="/agb.html">AGB's</a> gelesen und akzeptiere diese</label>
-				</div>
-				<div class="form-box check-box">
-					<input type="checkbox" id="datenschutz" name="datenschutz" required>
-					<label for="datenschutz">Ich habe die <a href="/datenschutz.html">Datenschutzverordnung</a> gelesen
-						und akzeptiere diese</label>
-				</div>
-				<div class="form-box">
-					<button type="submit">Verbindlich buchen</button>
+					<ul id="hamburgerList">
+						<li class="hamburgerItem">
+							<a href="ueber_uns.html" id="aboutUs"> Über uns </a>
+						</li>
+						<li class="hamburgerItem">
+							<a href="datenschutz.html" id="datenschutz">
+								Datenschutz
+							</a>
+						</li>
+						<li class="hamburgerItem">
+							<a href="index.html" id="home"> Startseite </a>
+						</li>
+						<li class="hamburgerItem">
+							<a href="impressum.html" id="impressum">
+								Impressum
+							</a>
+						</li>
+						<li class="hamburgerItem">
+							<a href="agb.html" id="agb"> AGB </a>
+						</li>
+					</ul>
 				</div>
 			</div>
-		</form>
-
-	</main>
-	<footer>
-		<ul id="footerList">
-			<li class="footerItem">
-				<a href="ueberUns.html" id="aboutUs"> Über uns </a>
-			</li>
-			<li class="footerItem">
-				<a href="datenschutz.html" id="datenschutz">
-					Datenschutz
-				</a>
-			</li>
-			<li class="footerItem">
-				<a href="index.html" id="home"> Startseite </a>
-			</li>
-			<li class="footerItem">
-				<a href="impressum.html" id="impressum"> Impressum </a>
-			</li>
-			<li class="footerItem">
-				<a href="agb.html" id="agb"> AGB </a>
-			</li>
-		</ul>
-	</footer>
-	<!--</script src="a.js">-->
-</body>
-
+		</header>
+		<main>
+			<form method="post">
+				<div class="formular">
+					<h1 id="form-headline">
+						Zu Kontaktzwecken, sowie der Bestätigung des
+						Buchungsvertrages brauchen wir noch ein paar Daten von
+						ihnen:
+					</h1>
+					<div class="inputs-container">
+						<div class="form-box" id="firstname">
+							<input
+								type="text"
+								name="firstname"
+								placeholder="Vorname"
+								required
+							/>
+						</div>
+						<div class="form-box" id="lastname">
+							<input
+								type="text"
+								name="lastname"
+								placeholder="Nachname"
+								required
+							/>
+						</div>
+						<div class="form-box" id="email">
+							<input
+								type="email"
+								name="email"
+								placeholder="E-Mail"
+								required
+							/>
+						</div>
+					</div>
+					<div class="form-box check-box">
+						<input type="checkbox" id="agb" name="agb" required />
+						<label for="agb"
+							>Ich habe die <a href="/agb.html">AGB's</a> gelesen
+							und akzeptiere diese</label
+						>
+					</div>
+					<div class="form-box check-box">
+						<input
+							type="checkbox"
+							id="datenschutz"
+							name="datenschutz"
+							required
+						/>
+						<label for="datenschutz"
+							>Ich habe die
+							<a href="/datenschutz.html"
+								>Datenschutzverordnung</a
+							>
+							gelesen und akzeptiere diese</label
+						>
+					</div>
+					<div class="form-box">
+						<button type="submit">Verbindlich buchen</button>
+					</div>
+				</div>
+			</form>
+		</main>
+		<footer>
+			<ul id="footerList">
+				<li class="footerItem">
+					<a href="ueber_uns.html" id="aboutUs"> Über uns </a>
+				</li>
+				<li class="footerItem">
+					<a href="datenschutz.html" id="datenschutz">
+						Datenschutz
+					</a>
+				</li>
+				<li class="footerItem">
+					<a href="index.html" id="home"> Startseite </a>
+				</li>
+				<li class="footerItem">
+					<a href="impressum.html" id="impressum"> Impressum </a>
+				</li>
+				<li class="footerItem">
+					<a href="agb.html" id="agb"> AGB </a>
+				</li>
+			</ul>
+		</footer>
+		</script src="eingabe_pruefung.js">
+	</body>
 </html>
