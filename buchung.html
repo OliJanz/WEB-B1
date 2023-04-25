@@ -11,42 +11,7 @@
 		/>
 		<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 		<title>FlexEvent</title>
-		<script>
-			function validateInput() {
 
-
-				console.log("tes12t");
-				console.log(document.getElementById("firstname").value);
-				var vorname = String(document.getElementById("firstname").value);
-				var nachname = String(document.getElementById("lastname").value);
-				var email = document.getElementById("email").value;
-				
-				let vornameRegex = /^[A-Z][a-z]{1,}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
-				let nachnameRegex = /^[a-zA-Z]{1}[a-zA-Z\- ]{0,}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
-
-
-				// Vorname-Validierung
-				if (!vornameRegex.test(vorname)) {
-      				alert('Bitte geben Sie einen gültigen Vornamen ein.');
-      				return false;
-    			}
-      
-				// Nachname-Validierung
-				if (!nachnameRegex.test(nachname)) {
-					alert('Bitte geben Sie einen gültigen Nachnamen ein.');
-					return false;
-				}
-
-				// Größenbeschränkung
-				if (vorname.length > 50 || nachname.length > 50) {
-					alert('Vorname und Nachname dürfen maximal 50 Zeichen lang sein.');
-					return false;
-				}
-
-			
-				return true;
-			}
-		</script>
 
 
 
@@ -109,7 +74,7 @@
 			</div>
 		</header>
 		<main>
-			<form action="bestaetigung.html" onsubmit="return validateInput()">
+			<form id="buchungsForm"  action="bestaetigung.html" onsubmit="return validateBuchungForm()">
 				<div class="formular">
 					<h1 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
@@ -122,6 +87,7 @@
 								type="text"
 								name="firstname"
 								placeholder="Vorname"
+								id="vorname"
 								required
 							/>
 						</div>
@@ -130,6 +96,7 @@
 								type="text"
 								name="lastname"
 								placeholder="Nachname"
+								id="nachname"
 								required
 							/>
 						</div>
@@ -138,6 +105,7 @@
 								type="email"
 								name="email"
 								placeholder="E-Mail"
+								id="emailAdresse"
 								required
 							/>
 						</div>
@@ -165,7 +133,7 @@
 						>
 					</div>
 					<div class="form-box">
-						<button type="submit" onclick="validateInput()">Verbindlich buchen</button>
+						<button type="submit" id="verbindlichBuchen">Verbindlich buchen</button>
 					</div>
 				</div>
 			</form>
@@ -199,6 +167,55 @@
 				</a>
 			</ul>
 		</footer>
+		<script>
+
+			function validateBuchungForm(){
+				console.log("test123");
+			
+
+				var vorname = String(document.getElementById("vorname").value);
+				var nachname = String(document.getElementById("nachname").value);
+				var email = String(document.getElementById("emailAdresse").value);
+
+				let vornameRegex = /^[A-Z][a-z]{1,}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
+				let nachnameRegex = /^[a-zA-Z]{1}[a-zA-Z\- ]{0,}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
+
+				// Größenbeschränkung
+				if (vorname.length > 50 || nachname.length > 50) {
+					alert('Vorname und Nachname dürfen maximal 50 Zeichen lang sein.');
+					return false;
+				}
+
+				// Vorname-Validierung
+				if (!vornameRegex.test(vorname)) {
+      				alert('Bitte geben Sie einen gültigen Vornamen ein.');
+      				return false;
+    			}
+      
+				// Nachname-Validierung
+				if (!nachnameRegex.test(nachname)) {
+					alert('Bitte geben Sie einen gültigen Nachnamen ein.');
+					return false;
+				}
+
+				if (!isValidEmail(email)) {
+    				alert("Ungültige E-Mail-Adresse.");
+    				return false;
+  				}
+
+				return true;
+
+			}
+
+
+			function isValidEmail(email) {
+				// Regulärer Ausdruck zur Überprüfung der E-Mail-Adresse
+				const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+				return regex.test(email);
+			}
+
+		</script>
+
 		
 	</body>
 </html>
