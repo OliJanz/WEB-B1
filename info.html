@@ -111,7 +111,7 @@
 						alt="Stadionaufteilung"
 						id="stadion"
 					/>
-					<form id="infoForm">
+					<form id="infoForm" action="buchung.html" onsubmit="return validateForm()">
 						<h4>Wählen Anzahl und Art der zu buchenden Plätze:</h4>
 						<div id="inputs">
 							<div id="vip">
@@ -182,6 +182,30 @@
 				</a>
 			</ul>
 		</footer>
-	</script src="eingabe_pruefung.js">
+
+		<script>
+			function validateForm() {
+				console.log("test");
+				var vipInput = document.getElementById("vipInput").value;
+  				var fosInput = document.getElementById("fosInput").value;
+  				var stehInput = document.getElementById("stehInput").value;
+  
+  				if (isNaN(vipInput) || isNaN(fosInput) || isNaN(stehInput)) {
+    				alert("Bitte wählen Sie einen Sitzplatz aus.");
+    				return false;
+  				}
+  
+  				if (vipInput <= 0 && fosInput <= 0 && stehInput <= 0) {
+   					alert("Bitte wählen Sie einen Sitzplatz aus.");
+    				return false;
+  				}
+  
+  				return true;
+
+			
+			}
+			  </script>
 	</body>
 </html>
+
+

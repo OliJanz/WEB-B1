@@ -11,6 +11,45 @@
 		/>
 		<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 		<title>FlexEvent</title>
+		<script>
+			function validateInput() {
+
+
+				console.log("tes12t");
+				console.log(document.getElementById("firstname").value);
+				var vorname = String(document.getElementById("firstname").value);
+				var nachname = String(document.getElementById("lastname").value);
+				var email = document.getElementById("email").value;
+				
+				let vornameRegex = /^[A-Z][a-z]{1,}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
+				let nachnameRegex = /^[a-zA-Z]{1}[a-zA-Z\- ]{0,}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
+
+
+				// Vorname-Validierung
+				if (!vornameRegex.test(vorname)) {
+      				alert('Bitte geben Sie einen gültigen Vornamen ein.');
+      				return false;
+    			}
+      
+				// Nachname-Validierung
+				if (!nachnameRegex.test(nachname)) {
+					alert('Bitte geben Sie einen gültigen Nachnamen ein.');
+					return false;
+				}
+
+				// Größenbeschränkung
+				if (vorname.length > 50 || nachname.length > 50) {
+					alert('Vorname und Nachname dürfen maximal 50 Zeichen lang sein.');
+					return false;
+				}
+
+			
+				return true;
+			}
+		</script>
+
+
+
 	</head>
 
 	<body id="body-buchung">
@@ -70,7 +109,7 @@
 			</div>
 		</header>
 		<main>
-			<form method="post">
+			<form action="bestaetigung.html" onsubmit="return validateInput()">
 				<div class="formular">
 					<h1 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
@@ -86,7 +125,7 @@
 								required
 							/>
 						</div>
-						<div class="form-box" id="lastname">
+						<div class="form-box" id="lastname" >
 							<input
 								type="text"
 								name="lastname"
@@ -126,7 +165,7 @@
 						>
 					</div>
 					<div class="form-box">
-						<button type="submit">Verbindlich buchen</button>
+						<button type="submit" onclick="validateInput()">Verbindlich buchen</button>
 					</div>
 				</div>
 			</form>
@@ -160,6 +199,6 @@
 				</a>
 			</ul>
 		</footer>
-		</script src="eingabe_pruefung.js">
+		
 	</body>
 </html>
