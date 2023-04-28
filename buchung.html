@@ -11,10 +11,6 @@
 		/>
 		<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 		<title>FlexEvent</title>
-
-
-
-
 	</head>
 
 	<body id="body-buchung">
@@ -74,7 +70,11 @@
 			</div>
 		</header>
 		<main>
-			<form id="buchungsForm"  action="bestaetigung.html" onsubmit="return validateBuchungForm()">
+			<form
+				id="buchungsForm"
+				action="bestaetigung.html"
+				onsubmit="return validateBuchungForm()"
+			>
 				<div class="formular">
 					<h1 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
@@ -90,8 +90,12 @@
 								id="vorname"
 								required
 							/>
+							<span class="falscheEingabe" id="falscherVorname"
+								>Bitte geben Sie einen gültigen Vornamen
+								ein.</span
+							>
 						</div>
-						<div class="form-box" id="lastname" >
+						<div class="form-box" id="lastname">
 							<input
 								type="text"
 								name="lastname"
@@ -99,6 +103,10 @@
 								id="nachname"
 								required
 							/>
+							<span class="falscheEingabe" id="falscherNachname"
+								>Bitte geben Sie einen gültigen Nachnamen
+								ein.</span
+							>
 						</div>
 						<div class="form-box" id="email">
 							<input
@@ -108,32 +116,46 @@
 								id="emailAdresse"
 								required
 							/>
+							<span class="falscheEingabe" id="falscheEmail"
+								>Bitte geben Sie eine gültige E-Mail Adresse
+								ein.</span
+							>
 						</div>
 					</div>
-					<div class="form-box check-box">
-						<input type="checkbox" id="agb" name="agb" required />
-						<label for="agb"
-							>Ich habe die <a href="/agb.html">AGB's</a> gelesen
-							und akzeptiere diese</label
-						>
-					</div>
-					<div class="form-box check-box">
-						<input
-							type="checkbox"
-							id="datenschutz"
-							name="datenschutz"
-							required
-						/>
-						<label for="datenschutz"
-							>Ich habe die
-							<a href="/datenschutz.html"
-								>Datenschutzverordnung</a
+					<div>
+						<div class="form-box check-box">
+							<input
+								type="checkbox"
+								id="agb"
+								name="agb"
+								required
+							/>
+							<label for="agb"
+								>Ich habe die
+								<a href="/agb.html">AGB's</a> gelesen und
+								akzeptiere diese</label
 							>
-							gelesen und akzeptiere diese</label
-						>
+						</div>
+						<div class="form-box check-box">
+							<input
+								type="checkbox"
+								id="datenschutz"
+								name="datenschutz"
+								required
+							/>
+							<label for="datenschutz"
+								>Ich habe die
+								<a href="/datenschutz.html"
+									>Datenschutzverordnung</a
+								>
+								gelesen und akzeptiere diese</label
+							>
+						</div>
 					</div>
 					<div class="form-box">
-						<button type="submit" id="verbindlichBuchen">Verbindlich buchen</button>
+						<button type="submit" id="verbindlichBuchen">
+							Verbindlich buchen
+						</button>
 					</div>
 				</div>
 			</form>
@@ -168,54 +190,60 @@
 			</ul>
 		</footer>
 		<script>
-
-			function validateBuchungForm(){
+			function validateBuchungForm() {
 				console.log("test123");
-			
 
 				var vorname = String(document.getElementById("vorname").value);
-				var nachname = String(document.getElementById("nachname").value);
-				var email = String(document.getElementById("emailAdresse").value);
+				var nachname = String(
+					document.getElementById("nachname").value
+				);
+				var email = String(
+					document.getElementById("emailAdresse").value
+				);
 
 				let vornameRegex = /^[A-Z][a-z]{1,}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
 				let nachnameRegex = /^[a-zA-Z]{1}[a-zA-Z\- ]{0,}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
 
 				// Größenbeschränkung
 				if (vorname.length > 50 || nachname.length > 50) {
-					alert('Vorname und Nachname dürfen maximal 50 Zeichen lang sein.');
+					alert(
+						"Vorname und Nachname dürfen maximal 50 Zeichen lang sein."
+					);
 					return false;
 				}
 
 				// Vorname-Validierung
 				if (!vornameRegex.test(vorname)) {
-      				alert('Bitte geben Sie einen gültigen Vornamen ein.');
-      				return false;
-    			}
-      
+					document.getElementById("falscherVorname").style.display =
+						"block";
+					document.getElementById("vorname").style.outline =
+						"#d72323";
+					return false;
+				}
+
 				// Nachname-Validierung
 				if (!nachnameRegex.test(nachname)) {
-					alert('Bitte geben Sie einen gültigen Nachnamen ein.');
+					document.getElementById("falscherNachname").style.display =
+						"block";
+					document.getElementById("nachname").style.outline =
+						"#d72323";
 					return false;
 				}
 
 				if (!isValidEmail(email)) {
-    				alert("Ungültige E-Mail-Adresse.");
-    				return false;
-  				}
+					document.getElementById("falscheEmail").style.display =
+						"block";
+					return false;
+				}
 
 				return true;
-
 			}
-
 
 			function isValidEmail(email) {
 				// Regulärer Ausdruck zur Überprüfung der E-Mail-Adresse
 				const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 				return regex.test(email);
 			}
-
 		</script>
-
-		
 	</body>
 </html>

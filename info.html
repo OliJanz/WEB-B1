@@ -111,7 +111,11 @@
 						alt="Stadionaufteilung"
 						id="stadion"
 					/>
-					<form id="infoForm" action="buchung.html" onsubmit="return validateForm()">
+					<form
+						id="infoForm"
+						action="buchung.html"
+						onsubmit="return validateForm()"
+					>
 						<h4>Wählen Anzahl und Art der zu buchenden Plätze:</h4>
 						<div id="inputs">
 							<div id="vip">
@@ -149,6 +153,10 @@
 							</div>
 						</div>
 						<button type="submit" id="weiter">Weiter</button>
+						<span class="falscheEingabe" id="einPlatz"
+							>Wählen sie bitte mindestens einen Sitzplatz
+							aus</span
+						>
 					</form>
 				</div>
 			</div>
@@ -187,25 +195,21 @@
 			function validateForm() {
 				console.log("test");
 				var vipInput = document.getElementById("vipInput").value;
-  				var fosInput = document.getElementById("fosInput").value;
-  				var stehInput = document.getElementById("stehInput").value;
-  
-  				if (isNaN(vipInput) || isNaN(fosInput) || isNaN(stehInput)) {
-    				alert("Bitte wählen Sie einen Sitzplatz aus.");
-    				return false;
-  				}
-  
-  				if (vipInput <= 0 && fosInput <= 0 && stehInput <= 0) {
-   					alert("Bitte wählen Sie einen Sitzplatz aus.");
-    				return false;
-  				}
-  
-  				return true;
+				var fosInput = document.getElementById("fosInput").value;
+				var stehInput = document.getElementById("stehInput").value;
 
-			
+				if (isNaN(vipInput) || isNaN(fosInput) || isNaN(stehInput)) {
+					alert("Bitte wählen Sie einen Sitzplatz aus.");
+					return false;
+				}
+
+				if (vipInput <= 0 && fosInput <= 0 && stehInput <= 0) {
+					document.getElementById("einPlatz").style.display = "block";
+					return false;
+				}
+
+				return true;
 			}
-			  </script>
+		</script>
 	</body>
 </html>
-
-

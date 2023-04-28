@@ -198,6 +198,12 @@ main {
 	margin: 13vh 1vw 8vh;
 }
 
+.falscheEingabe {
+	display: none;
+	color: #d72323;
+	text-align: center;
+}
+
 /* *---Index--- */
 #focus {
 	margin-top: -1vh;
@@ -320,7 +326,7 @@ main {
 	border-radius: 5px;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-rows: 20% 80%;
+	grid-template-rows: 20% 60% 20%;
 	justify-items: center;
 	align-items: center;
 }
@@ -355,6 +361,10 @@ main {
 	cursor: pointer;
 }
 
+#einPlatz {
+	grid-column: 1 / span 2;
+}
+
 /* *---Eingabe--- */
 #body-buchung {
 	margin: 0;
@@ -367,9 +377,8 @@ main {
 	align-items: center;
 }
 .formular {
-	height: 575px;
+	height: 100%;
 	width: 500px;
-	padding: 40px;
 	border-radius: 8px;
 	background-color: #3a4750;
 	display: flex;
@@ -380,7 +389,9 @@ main {
 
 #form-headline {
 	color: white;
+	padding: 40px;
 	font-size: 25px;
+	margin: 0;
 }
 
 .inputs-container {
@@ -400,6 +411,7 @@ input[type="email"] {
 	border: none;
 	font-size: 20px;
 }
+
 input:focus {
 	outline: none;
 	background-color: #d72323;
@@ -430,21 +442,6 @@ input:focus {
 
 .form-box a {
 	color: rgb(207, 151, 151);
-}
-
-@media (max-width: 600px) {
-	.formular {
-		height: 100%;
-		width: 100%;
-		padding: 0%;
-		justify-content: center;
-	}
-	.inputs-container {
-		margin: 80px;
-	}
-	#form-headline {
-		font-size: 15px;
-	}
 }
 
 /* *---Bestätigung--- */
@@ -550,6 +547,21 @@ a {
 
 	#stadion {
 		display: none;
+	}
+
+	.formular {
+		height: 100%;
+		width: 100%;
+		padding: 0%;
+		justify-content: center;
+	}
+
+	.inputs-container {
+		margin: 80px;
+	}
+
+	#form-headline {
+		font-size: 15px;
 	}
 
 	/* *---Footer--- */
