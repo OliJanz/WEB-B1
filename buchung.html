@@ -79,14 +79,15 @@
 					<h1 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
 						Buchungsvertrages brauchen wir noch ein paar Daten von
-						ihnen:
+						Ihnen:
 					</h1>
 					<div class="inputs-container">
 						<div class="form-box" id="firstname">
+							<label for="vorname">Vorname:</label>
 							<input
 								type="text"
 								name="firstname"
-								placeholder="Vorname"
+							
 								id="vorname"
 								required
 							/>
@@ -96,10 +97,11 @@
 							>
 						</div>
 						<div class="form-box" id="lastname">
+							<label for="nachname">Nachname:</label>
 							<input
 								type="text"
 								name="lastname"
-								placeholder="Nachname"
+								
 								id="nachname"
 								required
 							/>
@@ -109,10 +111,11 @@
 							>
 						</div>
 						<div class="form-box" id="email">
+							<label for="emailAdresse">E-Mail:</label>
 							<input
 								type="email"
 								name="email"
-								placeholder="E-Mail"
+							
 								id="emailAdresse"
 								required
 							/>
@@ -201,9 +204,8 @@
 					document.getElementById("emailAdresse").value
 				);
 
-				let vornameRegex = /^[A-Z][a-z]{1,}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
-				let nachnameRegex = /^[a-zA-Z]{1}[a-zA-Z\- ]{0,}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
-
+				let vornameRegex = /^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe +max 20 Zeichen,keine Sonderzeichen und Leerzeichen
+				let nachnameRegex = /^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/;//+Deutsche zeichen erlaubt
 				// Größenbeschränkung
 				if (vorname.length > 50 || nachname.length > 50) {
 					alert(
