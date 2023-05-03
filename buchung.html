@@ -76,18 +76,17 @@
 				onsubmit="return validateBuchungForm()"
 			>
 				<div class="formular">
-					<h1 id="form-headline">
+					<h3 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
 						Buchungsvertrages brauchen wir noch ein paar Daten von
 						Ihnen:
-					</h1>
+					</h3>
 					<div class="inputs-container">
 						<div class="form-box" id="firstname">
 							<label for="vorname">Vorname:</label>
 							<input
 								type="text"
 								name="firstname"
-							
 								id="vorname"
 								required
 							/>
@@ -101,7 +100,6 @@
 							<input
 								type="text"
 								name="lastname"
-								
 								id="nachname"
 								required
 							/>
@@ -115,7 +113,6 @@
 							<input
 								type="email"
 								name="email"
-							
 								id="emailAdresse"
 								required
 							/>
@@ -204,8 +201,10 @@
 					document.getElementById("emailAdresse").value
 				);
 
-				let vornameRegex = /^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe +max 20 Zeichen,keine Sonderzeichen und Leerzeichen
-				let nachnameRegex = /^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/;//+Deutsche zeichen erlaubt
+				let vornameRegex =
+					/^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe +max 20 Zeichen,keine Sonderzeichen und Leerzeichen
+				let nachnameRegex =
+					/^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/; //+Deutsche zeichen erlaubt
 				// Größenbeschränkung
 				if (vorname.length > 50 || nachname.length > 50) {
 					alert(
