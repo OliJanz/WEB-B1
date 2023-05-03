@@ -11,6 +11,7 @@
 		/>
 		<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 		<title>FlexEvent</title>
+		<script src="eingabe_pruefung.js"></script>
 	</head>
 
 	<body id="body-buchung">
@@ -73,7 +74,7 @@
 			<form
 				id="buchungsForm"
 				action="bestaetigung.html"
-				onsubmit="return validateBuchungForm()"
+				onsubmit="return validateInput()"
 			>
 				<div class="formular">
 					<h3 id="form-headline">
@@ -189,62 +190,5 @@
 				</a>
 			</ul>
 		</footer>
-		<script>
-			function validateBuchungForm() {
-				console.log("test123");
-
-				var vorname = String(document.getElementById("vorname").value);
-				var nachname = String(
-					document.getElementById("nachname").value
-				);
-				var email = String(
-					document.getElementById("emailAdresse").value
-				);
-
-				let vornameRegex =
-					/^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe +max 20 Zeichen,keine Sonderzeichen und Leerzeichen
-				let nachnameRegex =
-					/^([a-zA-ZäöüÄÖÜß]{1}[a-zA-ZäöüÄÖÜß]{0,19}){1}$/; //+Deutsche zeichen erlaubt
-				// Größenbeschränkung
-				if (vorname.length > 50 || nachname.length > 50) {
-					alert(
-						"Vorname und Nachname dürfen maximal 50 Zeichen lang sein."
-					);
-					return false;
-				}
-
-				// Vorname-Validierung
-				if (!vornameRegex.test(vorname)) {
-					document.getElementById("falscherVorname").style.display =
-						"block";
-					document.getElementById("vorname").style.outline =
-						"#d72323";
-					return false;
-				}
-
-				// Nachname-Validierung
-				if (!nachnameRegex.test(nachname)) {
-					document.getElementById("falscherNachname").style.display =
-						"block";
-					document.getElementById("nachname").style.outline =
-						"#d72323";
-					return false;
-				}
-
-				if (!isValidEmail(email)) {
-					document.getElementById("falscheEmail").style.display =
-						"block";
-					return false;
-				}
-
-				return true;
-			}
-
-			function isValidEmail(email) {
-				// Regulärer Ausdruck zur Überprüfung der E-Mail-Adresse
-				const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-				return regex.test(email);
-			}
-		</script>
 	</body>
 </html>

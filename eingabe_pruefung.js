@@ -1,49 +1,46 @@
-const vornameInput = document.getElementsByName('firstname')[0];
-const nachnameInput = document.getElementsByName('lastname')[0];
-const submitBtn = document.querySelector('button[type="submit"]');
-const emailInput = document.getElementById('email');
-
 function validateInput() {
-  const vorname = vornameInput.value.trim();
-  const nachname = nachnameInput.value.trim();
-  const email =emailInput.value.trim();
+  console.log("test123");
+  var vorname = document.getElementById('vorname').value;
+  var nachname = document.getElementById('nachname').value;
+  var email = document.getElementById('emailAdresse').value;
+  console.log(vorname);
+  console.log(nachname);
+  console.log(email);
+
+
+
+
+ 
 
   // Vorname-Validierung
-  const vornameRegex = /^[A-Z][a-z]{1,}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
+  const vornameRegex = /^[A-Z][a-z]{1,19}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
   if (!vornameRegex.test(vorname)) {
-    alert('Bitte geben Sie einen gültigen Vornamen ein.');
+    document.getElementById("falscherVorname").style.display = 'block';
     return false;
   }
 
   // Nachname-Validierung
-  const nachnameRegex = /^[a-zA-Z]{1}[a-zA-Z\- ]{0,}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
+  const nachnameRegex = /^[A-Z][a-zØ-öø-ÿ]+([ -](?!-)[a-zø-ÿ]+)*$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
   if (!nachnameRegex.test(nachname)) {
-    alert('Bitte geben Sie einen gültigen Nachnamen ein.');
+    document.getElementById("falscherNachname").style.display = 'block';
     return false;
   }
+
+ // Größenbeschränkung
+ if (vorname.length > 20 || nachname.length > 20) {
+  alert('Vorname und Nachname dürfen maximal 20 Zeichen lang sein.');
+  return false;
+}
 
   // E-Mail-Validierung
   if (!validateEmail(email)){
-    alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.')
+    document.getElementById("falscheEmail").style.display = 'block';
     return false;
   }
-
-  // Größenbeschränkung
-  if (vorname.length > 50 || nachname.length > 50) {
-    alert('Vorname und Nachname dürfen maximal 50 Zeichen lang sein.');
-    return false;
-  }
-
-  return true;
+return true;
 }
 
 function validateEmail(email) {
     const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
     return emailRegex.test(email);
   }
-
-submitBtn.addEventListener('click', function(event) {
-  if (!validateInput()) {
-    event.preventDefault();
-  }
-});
