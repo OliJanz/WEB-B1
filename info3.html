@@ -11,6 +11,7 @@
 		/>
 		<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 		<title>FlexEvent</title>
+		<script src="eingabe_pruefenInfoForm.js"></script>
 	</head>
 	<body>
 		<header>
@@ -111,7 +112,12 @@
 						alt="Stadionaufteilung"
 						id="stadion"
 					/>
-					<form id="infoForm">
+					<form 
+						id="infoForm"
+						action="buchung.html"
+						onsubmit="return validateForm()"
+						
+					>
 						<h4>Wählen Anzahl und Art der zu buchenden Plätze:</h4>
 						<div id="inputs">
 							<div id="vip">

@@ -4,6 +4,7 @@ const submitBtn = document.querySelector('button[type="submit"]');
 const emailInput = document.getElementById('email');
 
 function validateInput() {
+  console.log("test123");
   const vorname = vornameInput.value.trim();
   const nachname = nachnameInput.value.trim();
   const email =emailInput.value.trim();
