@@ -15,7 +15,7 @@ function validateInput() {
 	}
 
 	// Nachname-Validierung
-	const nachnameRegex = /^[A-Z][a-zØ-öø-ÿ]+([ -](?!-)[a-zø-ÿ]+)*$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
+	const nachnameRegex = /^[A-Z][a-zØ-öø-ÿ]+([ -](?!-)[a-zø-ÿ]+)*$/; // min. 2 Buchst0aben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
 	if (!nachnameRegex.test(nachname)) {
 		document.getElementById("falscherNachname").style.display = "block";
 		return false;
