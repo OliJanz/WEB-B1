@@ -11,7 +11,7 @@ function validateInput() {
  
 
   // Vorname-Validierung
-  const vornameRegex = /^(?!.*([a-zA-Zäöüß])\1{2})[a-zA-Zäöüß]{1,20}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
+  const vornameRegex = /^(?!.*([a-zA-Zäöüß -])\1{1})[a-zA-Zäöüß -]{1,20}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
   if (!vornameRegex.test(vorname)) {
     document.getElementById("falscherVorname").style.display = 'block';
     
@@ -22,7 +22,7 @@ function validateInput() {
   }
 
   // Nachname-Validierung
-  const nachnameRegex = /^(?!.*([a-zA-Zäöüß])\1{2})[a-zA-Zäöüß]{1,20}$/;; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
+  const nachnameRegex = /^(?!.*([a-zA-Zäöüß -])\1{1})[a-zA-Zäöüß -]{1,20}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
   if (!nachnameRegex.test(nachname)) {
   document.getElementById("falscherNachname").style.display = 'block';
     retval =  false;
