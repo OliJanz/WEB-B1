@@ -1,11 +1,9 @@
 function validateInput() {
-	console.log("test123");
+	
 	var vorname = document.getElementById("vorname").value;
 	var nachname = document.getElementById("nachname").value;
 	var email = document.getElementById("emailAdresse").value;
-	console.log(vorname);
-	console.log(nachname);
-	console.log(email);
+	
 
   var retval = true;
  
@@ -36,17 +34,13 @@ function validateInput() {
     display.getElementById('falscherVorname').style.display = 'block';
     retval =  false;
   }
-  else{
-    document.getElementById("falscherVorname").style.display = 'none';
-  }
+  
 
   if(nachname.length > 20){
     display.getElementById('falscherNachname').style.display = 'block';
     retval = false;
   }
-  else{
-    document.getElementById("falscherNachname").style.display = 'none';
-  }
+ 
 
   // E-Mail-Validierung
   if (!validateEmail(email)){
