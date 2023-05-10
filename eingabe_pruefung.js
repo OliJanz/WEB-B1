@@ -32,10 +32,21 @@ function validateInput() {
   }
 
  // Größenbeschränkung
- if (vorname.length > 20 || nachname.length > 20) {
-  alert('Vorname und Nachname dürfen maximal 20 Zeichen lang sein.');
-  retval =  false;
-}
+ if (vorname.length > 20) {
+    display.getElementById('falscherVorname').style.display = 'block';
+    retval =  false;
+  }
+  else{
+    document.getElementById("falscherVorname").style.display = 'none';
+  }
+
+  if(nachname.length > 20){
+    display.getElementById('falscherNachname').style.display = 'block';
+    retval = false;
+  }
+  else{
+    document.getElementById("falscherNachname").style.display = 'none';
+  }
 
   // E-Mail-Validierung
   if (!validateEmail(email)){
