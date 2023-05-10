@@ -1,11 +1,11 @@
 function validateInput() {
-  console.log("test123");
-  var vorname = document.getElementById('vorname').value;
-  var nachname = document.getElementById('nachname').value;
-  var email = document.getElementById('emailAdresse').value;
-  console.log(vorname);
-  console.log(nachname);
-  console.log(email);
+	console.log("test123");
+	var vorname = document.getElementById("vorname").value;
+	var nachname = document.getElementById("nachname").value;
+	var email = document.getElementById("emailAdresse").value;
+	console.log(vorname);
+	console.log(nachname);
+	console.log(email);
 
   var retval = true;
  
