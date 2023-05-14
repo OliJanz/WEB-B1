@@ -1,3 +1,7 @@
+document
+	.getElementById("buchungsForm")
+	.addEventListener("submit", validateInput());
+
 function validateInput() {
 	var vorname = document.getElementById("vorname").value;
 	var nachname = document.getElementById("nachname").value;

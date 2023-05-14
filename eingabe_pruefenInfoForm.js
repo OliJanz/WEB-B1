@@ -1,3 +1,5 @@
+document.getElementById("infoForm").addEventListener("submit", validateForm());
+
 function validateForm() {
 	console.log("test");
 	var vipInput = document.getElementById("vipInput").value;
