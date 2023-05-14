@@ -1,41 +1,60 @@
 function validateInput() {
-	console.log("test123");
+	
 	var vorname = document.getElementById("vorname").value;
 	var nachname = document.getElementById("nachname").value;
 	var email = document.getElementById("emailAdresse").value;
-	console.log(vorname);
-	console.log(nachname);
-	console.log(email);
+	
 
-	// Vorname-Validierung
-	const vornameRegex = /^[A-Z][a-z]{1,19}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
-	if (!vornameRegex.test(vorname)) {
-		document.getElementById("falscherVorname").style.display = "block";
-		return false;
-	}
+  var retval = true;
+ 
 
-	// Nachname-Validierung
-	const nachnameRegex = /^[A-Z][a-zØ-öø-ÿ]+([ -](?!-)[a-zø-ÿ]+)*$/; // min. 2 Buchst0aben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
-	if (!nachnameRegex.test(nachname)) {
-		document.getElementById("falscherNachname").style.display = "block";
-		return false;
-	}
+  // Vorname-Validierung
+  const vornameRegex = /^(?!.*([a-zA-Zäöüß -])\1{1})[a-zA-Zäöüß -]{1,20}$/; // min. 2 Buchstaben, beginnt mit Großbuchstabe
+  if (!vornameRegex.test(vorname)) {
+    document.getElementById("falscherVorname").style.display = 'block';
+    
+    retval =  false;
+  }
+  else{
+    document.getElementById("falscherVorname").style.display = 'none';
+  }
 
-	// Größenbeschränkung
-	if (vorname.length > 20 || nachname.length > 20) {
-		alert("Vorname und Nachname dürfen maximal 20 Zeichen lang sein.");
-		return false;
-	}
+  // Nachname-Validierung
+  const nachnameRegex = /^(?!.*([a-zA-Zäöüß -])\1{1})[a-zA-Zäöüß -]{1,20}$/; // min. 2 Buchstaben, kann mit Kleinbuchstabe beginnen, keine zwei Bindestriche hintereinander, keine Sonderzeichen
+  if (!nachnameRegex.test(nachname)) {
+  document.getElementById("falscherNachname").style.display = 'block';
+    retval =  false;
+  }
+  else{
+    document.getElementById("falscherNachname").style.display = 'none';
+  }
 
-	// E-Mail-Validierung
-	if (!validateEmail(email)) {
-		document.getElementById("falscheEmail").style.display = "block";
-		return false;
-	}
-	return true;
+ // Größenbeschränkung
+ if (vorname.length > 20) {
+    display.getElementById('falscherVorname').style.display = 'block';
+    retval =  false;
+  }
+  
+
+  if(nachname.length > 20){
+    display.getElementById('falscherNachname').style.display = 'block';
+    retval = false;
+  }
+ 
+
+  // E-Mail-Validierung
+  if (!validateEmail(email)){
+    document.getElementById("falscheEmail").style.display = 'block';
+    setTimeout(function() {
+      document.getElementById("falscheEmail").style.display = 'none';
+    }, 3000);
+    retval = false;
+  }
+  return retval;
 }
 
 function validateEmail(email) {
 	const emailRegex = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
 	return emailRegex.test(email);
 }
+
