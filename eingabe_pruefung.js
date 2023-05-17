@@ -1,8 +1,7 @@
-document
-	.getElementById("buchungsForm")
-	.addEventListener("submit", validateInput());
+const form = document.getElementById("buchungsForm");
+form.addEventListener("submit", validateInput);
 
-function validateInput() {
+function validateInput(evt) {
 	var vorname = document.getElementById("vorname").value;
 	var nachname = document.getElementById("nachname").value;
 	var email = document.getElementById("emailAdresse").value;
@@ -48,7 +47,10 @@ function validateInput() {
 		}, 3000);
 		retval = false;
 	}
-	return retval;
+
+	if (retval == false) {
+		evt.preventDefault();
+	}
 }
 
 function validateEmail(email) {

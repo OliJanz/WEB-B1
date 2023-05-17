@@ -1,23 +1,20 @@
-document.getElementById("infoForm").addEventListener("submit", validateForm());
+const form = document.getElementById("infoForm");
+form.addEventListener("submit", validateForm);
 
-function validateForm() {
-	console.log("test");
+function validateForm(evt) {
 	var vipInput = document.getElementById("vipInput").value;
 	var fosInput = document.getElementById("fosInput").value;
 	var stehInput = document.getElementById("stehInput").value;
-	console.log(vipInput);
-	console.log(fosInput);
-	console.log(stehInput);
 
 	if (isNaN(vipInput) || isNaN(fosInput) || isNaN(stehInput)) {
-		document.getElementById("einPlatz").style.display = "block";
-		return false;
+		document.getElementById("einPlatz").style.visibility = "visible";
 	}
-	console.log("test12313423s");
 	if (vipInput <= 0 && fosInput <= 0 && stehInput <= 0) {
-		document.getElementById("einPlatz").style.display = "block";
-		return false;
+		document.getElementById("einPlatz").style.visibility = "visible";
+		retval = false;
 	}
 
-	return true;
+	if (retval == false) {
+		evt.preventDefault();
+	}
 }
