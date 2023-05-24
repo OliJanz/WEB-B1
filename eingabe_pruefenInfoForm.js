@@ -17,4 +17,5 @@ function validateForm(evt) {
 	if (retval == false) {
 		evt.preventDefault();
 	}
+	return retval;
 }
