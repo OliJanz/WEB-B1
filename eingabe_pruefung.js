@@ -19,14 +19,55 @@ function validateInput(evt) {
 	}
 
 	// Nachname-Validierung
-	const nachnameRegex = /^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/; //Beginnt mit Großbuchstabe,erlaubt " ","-", maximal 2 gleiche Buchstaben nacheinander,max 20 Zeichen
+	/*const nachnameRegex = /^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/; //Beginnt mit Großbuchstabe,erlaubt " ","-", maximal 2 gleiche Buchstaben nacheinander,max 20 Zeichen
 	if (!nachnameRegex.test(nachname)) {
 		document.getElementById("falscherNachname").style.visibility =
 			"visible";
 		retval = false;
 	} else {
 		document.getElementById("falscherNachname").style.visibility = "hidden";
+	} */
+
+	const min2Buchstaben=/^[a-zA-z]+2$/; 
+    if(!min2Buchstaben.test(nachname)) { 
+        document.getElementById("min2Buchst").style.visibility= "visible"; 
+        retval = false; 
+    } else {
+		document.getElementById("min2Bucst").style.visibility="hidden";
+	} 
+
+    const kSonderzeichen =/[^a-zA-Z]/g ; 
+    if(!kSonderzeichen.test(nachname)) {
+        document.getElementById("keineSonderzeichen").style.visibility="visibile"; 
+        retval= false; 
+    } else{
+		document.getElementById("keineSonderzeichen").style.visibility="hidden";
 	}
+
+    const k2BindestricheH =/^(?!.*--).*$/g ; //Keine zwei - hintereinander  
+    if(!k2BindestricheH.test(nachname)) { 
+        document.getElementById("k2BH").style.visibility="visible";; 
+        retval = false; 
+    } else{
+		document.getElementById("k2BH").style.visibility="hidden";
+	}  
+
+    const zweiWörter= /^(?:[A-Za-z][A-Za-z]*)(?: [A-Z][A-Za-z]*)$/; // zwei wörter erstes wort fängt groß/klein an zweites wort fängt groß an  
+    if(!zweiWörter.test(nachname)) {
+        document.getElementById("zweiWörter").style.visibility="visible";; 
+        retval= false; 
+    } else{
+		document.getElementById("zweiWörter").style.visibility="hidden";
+	}
+    
+    const einWort = /^(?:[A-Z][A-Za-z]*|[A-Z][a-z]*)$/; //ein Wort erster Buchstabe groß, rest klein
+    if(einWort.test(nachname)) {
+        document.getElementById("einWort").style.visibility="visibility";; 
+		retval = false; 
+	} else {
+	document.getElementById("einWort").style.visibility="hidden";
+	}
+
 
 	// Größenbeschränkung
 	if (vorname.length > 20) {
