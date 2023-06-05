@@ -68,7 +68,37 @@
 				</div>
 			</div>
 		</header>
-		<main class="image-center">
+		<main class="image-center"> 
+
+		<?php 
+
+		//Prüfung der Eingaben 
+		function checkFirstName(){
+		$vornameRegex = "/^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/"; 
+
+		//An den Server verschickte Daten(Vornamen) in Arrays speichern 
+		$vorname = $_GET["firstname"]; 
+		
+		if(!(preg_match($vornameRegex, $vorname))) { 
+			exit("Falsche Eingabe");  
+//		} else {  //Nur zum probieren, später löschen: 
+//			echo("Richtig: Vorname"); //Eigentlich Bestätigung mit Grünem Haken 
+		}
+	} checkFirstName(); 
+
+		function checkLastname() { 
+		$nachnameregex = ""; 
+			//An den Server verschickte Daten in Arrays speichern 
+		$nachname= $_GET["lastname"]; 
+
+		if(!(preg_match($nachnameregex, "hallo"))) { 
+			exit("nein"); 
+		}else{
+			echo("danke"); 
+		}
+		}
+
+		?>
 			<h1 id="textBuchung">Buchung erfolgreich!</h1>
 			<img
 				src="resources/check.png"
