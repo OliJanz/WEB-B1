@@ -38,11 +38,11 @@ function validateInput(evt) {
 		document.getElementById("min2Bucst").style.visibility="hidden";
 	} 
 
-  const kSonderzeichen ="[^a-zA-Z]+$" ; 
+  const kSonderzeichen ="/[^a-zA-Z]+$/" ; 
   if(!kSonderzeichen.test(nachname)) {
     document.getElementById("keineSonderzeichen").style.visibility="visibile"; 
     retval= false; 
-<    } 
+    } 
   else{
 		document.getElementById("keineSonderzeichen").style.visibility="hidden";
 	}
