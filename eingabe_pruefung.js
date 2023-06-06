@@ -3,6 +3,7 @@ form.addEventListener("submit", validateInput);
 
 function validateInput(evt) {
   console.log('test213');
+  evt.preventDefault();
 	var vorname = document.getElementById("vorname").value;
 	var nachname = document.getElementById("nachname").value;
 	var email = document.getElementById("emailAdresse").value;
@@ -42,8 +43,7 @@ function validateInput(evt) {
   if(!kSonderzeichen.test(nachname)) {
     document.getElementById("keineSonderzeichen").style.visibility="visibile"; 
     retval= false; 
-    } 
-  else{
+  }else{
 		document.getElementById("keineSonderzeichen").style.visibility="hidden";
 	}
 
@@ -95,7 +95,7 @@ function validateInput(evt) {
 	}
 
 	if (retval == false) {
-		evt.preventDefault();
+		return false
 	}
 
   return retval;
