@@ -22,16 +22,12 @@
             while ($row = $result->fetch_assoc()) {
 
                 if($counter ==1){
-                    echo '<section id="focus"';
-                    echo '<a href="buchung.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a>';
-                    echo '</section>';
+                    echo '<section id="focus"<a href="info.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></section>';
                     echo '<section id="cardSection">';
                 }
                 
                 else {
-
-                
-                echo '<div class="card"><a href="buchung.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></div>';
+                echo '<div class="card"><a href="info.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></div>';
                 
             }
             $counter++;
