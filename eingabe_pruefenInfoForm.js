@@ -2,6 +2,7 @@ const form = document.getElementById("infoForm");
 form.addEventListener("submit", validateForm);
 
 function validateForm(evt) {
+	evt.preventDefault();
 	var vipInput = document.getElementById("vipInput").value;
 	var fosInput = document.getElementById("fosInput").value;
 	var stehInput = document.getElementById("stehInput").value;
@@ -15,7 +16,7 @@ function validateForm(evt) {
 	}
 
 	if (retval == false) {
-		evt.preventDefault();
+		return false;
 	}
 	return retval;
 }
