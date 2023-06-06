@@ -22,7 +22,7 @@
             while ($row = $result->fetch_assoc()) {
 
                 if($counter ==1){
-                    echo '<section id="focus"<a href="info.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></section>';
+                    echo '<section id="focus"><a href="info.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></section>';
                     echo '<section id="cardSection">';
                 }
                 
