@@ -199,8 +199,7 @@ main {
 }
 
 .falscheEingabe {
-	display: block;
-	visibility: hidden;
+	display: none;
 	color: #d72323;
 	text-align: center;
 }
