@@ -1,7 +1,6 @@
 const form = document.getElementById("buchungsForm");
 form.addEventListener("submit", validateInput);
 
-
 function validateInput(evt) {
 	console.log("test213");
 	var vorname = document.getElementById("vorname").value;
@@ -9,7 +8,6 @@ function validateInput(evt) {
 	var email = document.getElementById("emailAdresse").value;
 	console.log(vorname);
 	console.log(nachname);
-
 
 	var retval = true;
 	// Vorname-Validierung
@@ -36,7 +34,7 @@ function validateInput(evt) {
 	const min2Buchstaben = /./;
 	if (!min2Buchstaben.test(nachname)) {
 		console.log(vorname);
-		console.log(nachname)
+		console.log(nachname);
 		document.getElementById("min2Buchst").style.display = "block";
 		retval = false;
 	} else {
@@ -59,35 +57,26 @@ function validateInput(evt) {
 		document.getElementById("k2BH").style.display = "none";
 	}
 
-
 	const zweiWörter = /^[A-Za-z]+ [A-Z][a-zA-Z]*$/; // zwei wörter: erstes wort fängt groß/klein an zweites wort fängt groß an
 	const einWort = /^[A-Z][a-z]*$/; //ein Wort erster Buchstabe groß, rest klein
-	
 
-
-
-	if(checkNameWordCountOne(nachname) == true){
-		if(!einWort.test(nachname)){
+	if (checkNameWordCountOne(nachname) == true) {
+		if (!einWort.test(nachname)) {
 			document.getElementById("einWort").style.display = "block";
 			retval = false;
-		}
-		else{
+		} else {
 			document.getElementById("einWort").style.display = "none";
 		}
 	}
 
-	if(checkNameWordCountTwo(nachname) == true){
+	if (checkNameWordCountTwo(nachname) == true) {
 		if (!zweiWörter.test(nachname)) {
 			document.getElementById("zweiWörter").style.display = "block";
 			retval = false;
-		}else{
+		} else {
 			document.getElementById("zweiWörter").style.display = "none";
 		}
 	}
-
-
-
-	
 
 	// Größenbeschränkung
 	if (vorname.length > 20) {
@@ -122,43 +111,38 @@ function validateEmail(email) {
 	return emailRegex.test(email);
 }
 
-function getNumWords(name){
+function getNumWords(name) {
 	return name.split(" ");
 }
 
 function checkNameWordCountOne(nachname) {
 	// Entferne führende und nachfolgende Leerzeichen
 	nachname = nachname.trim();
-  
+
 	// Teile den Nachnamen anhand von Leerzeichen auf
 	var words = nachname.split(" ");
-  
+
 	// Überprüfe die Anzahl der Wörter
 	var wordCount = words.length;
 	if (wordCount === 1) {
-	  return true;
+		return true;
 	} else {
-	  return false;
+		return false;
 	}
-  }
+}
 
-  function checkNameWordCountTwo(nachname) {
+function checkNameWordCountTwo(nachname) {
 	// Entferne führende und nachfolgende Leerzeichen
 	nachname = nachname.trim();
-  
+
 	// Teile den Nachnamen anhand von Leerzeichen auf
 	var words = nachname.split(" ");
-  
+
 	// Überprüfe die Anzahl der Wörter
 	var wordCount = words.length;
 	if (wordCount === 2) {
-	  return true;
+		return true;
 	} else {
-	  return false;
+		return false;
 	}
-  }
-
-
-
-
-
+}
