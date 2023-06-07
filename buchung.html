@@ -69,7 +69,8 @@
 			</div>
 		</header>
 		<main>
-			<form id="buchungsForm" action="bestaetigung.php">
+			<form id="buchungsForm" method="POST" action="buchung_pruefung.php">
+				
 				<div class="formular">
 					<h3 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
@@ -167,6 +168,7 @@
 						</div>
 					</div>
 					<div class="form-box">
+						<input type="hidden" name="validationResult" id="validationResult" value="" />
 						<button type="submit" id="verbindlichBuchen">
 							Verbindlich buchen
 						</button>

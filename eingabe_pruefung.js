@@ -9,7 +9,6 @@ function validateInput(evt) {
 	var email = document.getElementById("emailAdresse").value;
 
 	var retval = true;
-
 	// Vorname-Validierung
 	const vornameRegex =
 		/^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/; //Beginnt mit Großbuchstabe,erlaubt " ","-", maximal 2 gleiche Buchstaben nacheinander
@@ -95,7 +94,7 @@ function validateInput(evt) {
 	if (retval == false) {
 		return false;
 	}
-
+	document.getElementById("validationResult").value = retval;
 	return retval;
 }
 
