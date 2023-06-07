@@ -46,6 +46,8 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $stmt->close();
             $conn->close();
         }
+
+        
     } else {
         echo "Validierung fehlgeschlagen! Bitte form data überprüfen!";
     }

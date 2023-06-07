@@ -69,8 +69,7 @@
 			</div>
 		</header>
 		<main>
-			<form id="buchungsForm" method="POST" action="buchung_pruefung.php">
-				
+			<form id="buchungsForm" method="POST" action="bestaetigung.html">
 				<div class="formular">
 					<h3 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
@@ -90,6 +89,25 @@
 								>Bitte geben Sie einen gültigen Vornamen
 								ein.</span
 							>
+							<span class="falscheEingabe" id="min2Buchst">
+								Mindestens 2 Buchstaben
+							</span>
+							<span
+								class="falscheEingabe"
+								id="keineSonderzeichen"
+							>
+								Keine Sonderzeichen eingeben
+							</span>
+							<span class="falscheEingabe" id="zweiWörter">
+								Erstes Wort klein/groß beginnen, 2. Wort groß
+								beginnen
+							</span>
+							<span class="falscheEingabe" id="einWort">
+								Wort muss groß anfangen!
+							</span>
+							<span class="falscheEingabe" id="k2BH">
+								Keine 2 Bindestrihe hintereinander
+							</span>
 						</div>
 						<div class="form-box" id="lastname">
 							<label for="nachname">Nachname:</label>
@@ -168,7 +186,12 @@
 						</div>
 					</div>
 					<div class="form-box">
-						<input type="hidden" name="validationResult" id="validationResult" value="" />
+						<input
+							type="hidden"
+							name="validationResult"
+							id="validationResult"
+							value=""
+						/>
 						<button type="submit" id="verbindlichBuchen">
 							Verbindlich buchen
 						</button>

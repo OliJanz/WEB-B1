@@ -9,39 +9,62 @@ function validateInput(evt) {
 	console.log(vorname);
 	console.log(nachname);
 
+	const einWort = /^[A-Z][a-z]*$/;
+
 	var retval = true;
 	// Vorname-Validierung
 	const vornameRegex =
 		/^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/; //Beginnt mit Großbuchstabe,erlaubt " ","-", maximal 2 gleiche Buchstaben nacheinander
 	if (!vornameRegex.test(vorname)) {
 		document.getElementById("falscherVorname").style.display = "block";
-		console.log("vorname");
 		retval = false;
 	} else {
 		document.getElementById("falscherVorname").style.display = "none";
 	}
 
-	// Nachname-Validierung
-	/*const nachnameRegex = /^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/; //Beginnt mit Großbuchstabe,erlaubt " ","-", maximal 2 gleiche Buchstaben nacheinander,max 20 Zeichen
-	if (!nachnameRegex.test(nachname)) {
-		document.getElementById("falscherNachname").style.visibility =
-			"visible";
+	const min2Buchstaben = /./;
+	if (!min2Buchstaben.test(vorname)) {
+		document.getElementById("min2BuchstabenVorname").style.display =
+			"block";
 		retval = false;
 	} else {
-		document.getElementById("falscherNachname").style.visibility = "hidden";
-	} */
+		document.getElementById("min2BuchstabenVorname").style.display = "none";
+	}
 
-	const min2Buchstaben = /./;
+	const kSonderzeichen = /[a-zA-Z]+$/;
+	if (!kSonderzeichen.test(vorname)) {
+		document.getElementById("keineSonderzeichenVorname").style.display =
+			"block";
+		retval = false;
+	} else {
+		document.getElementById("keineSonderzeichenVorname").style.display =
+			"none";
+	}
+
+	if (!einWort.test(vorname)) {
+		document.getElementById("einWortVorname").style.display = "block";
+		retval = false;
+	} else {
+		document.getElementById("einWortVorname").style.display = "none";
+	}
+
+	// Nachname-Validierung
+	/*const nachnameRegex = /^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/; //Beginnt mit Großbuchstabe,erlaubt " ","-", maximal 2 gleiche Buchstaben nacheinander,max 20 Zeichen
+    if (!nachnameRegex.test(nachname)) {
+        document.getElementById("falscherNachname").style.visibility =
+            "visible";
+        retval = false;
+    } else {
+        document.getElementById("falscherNachname").style.visibility = "hidden";
+    } */
+
 	if (!min2Buchstaben.test(nachname)) {
-		console.log(vorname);
-		console.log(nachname);
 		document.getElementById("min2Buchst").style.display = "block";
 		retval = false;
 	} else {
 		document.getElementById("min2Buchst").style.display = "none";
 	}
 
-	const kSonderzeichen = /[a-zA-Z]+$/;
 	if (!kSonderzeichen.test(nachname)) {
 		document.getElementById("keineSonderzeichen").style.display = "block";
 		retval = false;
@@ -58,7 +81,7 @@ function validateInput(evt) {
 	}
 
 	const zweiWörter = /^[A-Za-z]+ [A-Z][a-zA-Z]*$/; // zwei wörter: erstes wort fängt groß/klein an zweites wort fängt groß an
-	const einWort = /^[A-Z][a-z]*$/; //ein Wort erster Buchstabe groß, rest klein
+	//ein Wort erster Buchstabe groß, rest klein
 
 	if (checkNameWordCountOne(nachname) == true) {
 		if (!einWort.test(nachname)) {
