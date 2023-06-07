@@ -17,6 +17,7 @@ function validateInput(evt) {
 		/^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/; //Beginnt mit Großbuchstabe,erlaubt " ","-", maximal 2 gleiche Buchstaben nacheinander
 	if (!vornameRegex.test(vorname)) {
 		document.getElementById("falscherVorname").style.display = "block";
+		evt.preventDefault();
 		retval = false;
 	} else {
 		document.getElementById("falscherVorname").style.display = "none";
@@ -26,6 +27,7 @@ function validateInput(evt) {
 	if (!min2Buchstaben.test(vorname)) {
 		document.getElementById("min2BuchstabenVorname").style.display =
 			"block";
+		evt.preventDefault();
 		retval = false;
 	} else {
 		document.getElementById("min2BuchstabenVorname").style.display = "none";
@@ -35,6 +37,7 @@ function validateInput(evt) {
 	if (!kSonderzeichen.test(vorname)) {
 		document.getElementById("keineSonderzeichenVorname").style.display =
 			"block";
+		evt.preventDefault();
 		retval = false;
 	} else {
 		document.getElementById("keineSonderzeichenVorname").style.display =
@@ -43,6 +46,7 @@ function validateInput(evt) {
 
 	if (!einWort.test(vorname)) {
 		document.getElementById("einWortVorname").style.display = "block";
+		evt.preventDefault();
 		retval = false;
 	} else {
 		document.getElementById("einWortVorname").style.display = "none";
@@ -60,6 +64,7 @@ function validateInput(evt) {
 
 	if (!min2Buchstaben.test(nachname)) {
 		document.getElementById("min2Buchst").style.display = "block";
+		evt.preventDefault();
 		retval = false;
 	} else {
 		document.getElementById("min2Buchst").style.display = "none";
@@ -67,6 +72,7 @@ function validateInput(evt) {
 
 	if (!kSonderzeichen.test(nachname)) {
 		document.getElementById("keineSonderzeichen").style.display = "block";
+		evt.preventDefault();
 		retval = false;
 	} else {
 		document.getElementById("keineSonderzeichen").style.display = "none";
@@ -75,6 +81,7 @@ function validateInput(evt) {
 	const ZweiBind = /-{2,}/; //Prüft auf 2 BIndestriche hitnereinander
 	if (ZweiBind.test(nachname)) {
 		document.getElementById("k2BH").style.display = "block";
+		evt.preventDefault();
 		retval = false;
 	} else {
 		document.getElementById("k2BH").style.display = "none";
@@ -86,6 +93,7 @@ function validateInput(evt) {
 	if (checkNameWordCountOne(nachname) == true) {
 		if (!einWort.test(nachname)) {
 			document.getElementById("einWort").style.display = "block";
+			evt.preventDefault();
 			retval = false;
 		} else {
 			document.getElementById("einWort").style.display = "none";
@@ -95,6 +103,7 @@ function validateInput(evt) {
 	if (checkNameWordCountTwo(nachname) == true) {
 		if (!zweiWörter.test(nachname)) {
 			document.getElementById("zweiWörter").style.display = "block";
+			evt.preventDefault();
 			retval = false;
 		} else {
 			document.getElementById("zweiWörter").style.display = "none";
@@ -104,17 +113,20 @@ function validateInput(evt) {
 	// Größenbeschränkung
 	if (vorname.length > 20) {
 		display.getElementById("falscherVorname").style.display = "block";
+		evt.preventDefault();
 		retval = false;
 	}
 
 	if (nachname.length > 20) {
 		display.getElementById("falscherNachname").style.display = "block";
+		evt.preventDefault();
 		retval = false;
 	}
 
 	// E-Mail-Validierung
 	if (!validateEmail(email)) {
 		document.getElementById("falscheEmail").style.display = "block";
+		evt.preventDefault();
 		setTimeout(function () {
 			document.getElementById("falscheEmail").style.display = "none";
 		}, 3000);
