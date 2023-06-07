@@ -1,5 +1,5 @@
 <?php
-$header = '
+$header = <<<HTML
 <!DOCTYPE html>
 <html lang="de">
 	<head>
@@ -18,11 +18,11 @@ $header = '
 		<header>
 			<div id="identity">
 				<div id="logo">
-					<a href="index.html">
+					<a href="index.php">
 						<img src="resources/logo.png" alt="Firmenlogo" />
 					</a>
 				</div>
-				<a href="index.html" id="firmenname">FLEXEVENT</a>
+				<a href="index.php" id="firmenname">FLEXEVENT</a>
 			</div>
 			<input type="text" placeholder="Suchen" id="suchfeld" />
 			<div id="mobile">
@@ -56,7 +56,7 @@ $header = '
 							</a>
 						</li>
 						<li class="hamburgerItem">
-							<a href="index.html" id="home"> Startseite </a>
+							<a href="index.php" id="home"> Startseite </a>
 						</li>
 						<li class="hamburgerItem">
 							<a href="impressum.html" id="impressum">
@@ -70,6 +70,6 @@ $header = '
 				</div>
 			</div>
 		</header>
-';
+HTML;
 echo $header;
 ?>
