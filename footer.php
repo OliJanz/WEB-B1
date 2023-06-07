@@ -12,7 +12,7 @@ $footer = <<<HTML
 						<span>Datenschutz</span>
 					</li>
 				</a>
-				<a href="index.html">
+				<a href="index.php">
 					<li class="footerItem">
 						<span>Startseite</span>
 					</li>

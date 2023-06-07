@@ -69,7 +69,8 @@
 			</div>
 		</header>
 		<main>
-			<form id="buchungsForm" action="bestaetigung.php">
+			<form id="buchungsForm" method="POST" action="buchung_pruefung.php">
+				
 				<div class="formular">
 					<h3 id="form-headline">
 						Zu Kontaktzwecken, sowie der Bestätigung des
@@ -98,25 +99,29 @@
 								id="nachname"
 								required
 							/>
-						<!--	<span class="falscheEingabe" id="falscherNachname"
+							<!--	<span class="falscheEingabe" id="falscherNachname"
 								>Bitte geben Sie einen gültigen Nachnamen
 								ein.</span
 							> -->
 							<span class="falscheEingabe" id="min2Buchst">
-                                Mindestens 2 Buchstaben 
-                            </span> 
-                            <span class="falscheEingabe" id="keineSonderzeichen">
-                                Keine Sonderzeichen eingeben
-                            </span> 
-                            <span class="falscheEingabe" id="zweiWörter"> 
-                                Erstes Wort klein/groß beginnen, 2. Wort groß beginnen 
-                            </span>  
-                            <span class="falscheEingabe" id="einWort">
-                                Wort muss groß anfangen!
-                            </span>
-                            <span class="falscheEingabe" id="k2BH"> 
-                                Keine 2 Bindestrihe hintereinander
-                            </span>
+								Mindestens 2 Buchstaben
+							</span>
+							<span
+								class="falscheEingabe"
+								id="keineSonderzeichen"
+							>
+								Keine Sonderzeichen eingeben
+							</span>
+							<span class="falscheEingabe" id="zweiWörter">
+								Erstes Wort klein/groß beginnen, 2. Wort groß
+								beginnen
+							</span>
+							<span class="falscheEingabe" id="einWort">
+								Wort muss groß anfangen!
+							</span>
+							<span class="falscheEingabe" id="k2BH">
+								Keine 2 Bindestrihe hintereinander
+							</span>
 						</div>
 						<div class="form-box" id="email">
 							<label for="emailAdresse">E-Mail:</label>
@@ -163,6 +168,7 @@
 						</div>
 					</div>
 					<div class="form-box">
+						<input type="hidden" name="validationResult" id="validationResult" value="" />
 						<button type="submit" id="verbindlichBuchen">
 							Verbindlich buchen
 						</button>

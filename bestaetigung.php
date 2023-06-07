@@ -80,25 +80,34 @@
 		$vorname = $_GET["firstname"]; 
 		
 		if(!(preg_match($vornameRegex, $vorname))) { 
-			exit("Falsche Eingabe");  
-//		} else {  //Nur zum probieren, später löschen: 
-//			echo("Richtig: Vorname"); //Eigentlich Bestätigung mit Grünem Haken 
-		}
-	} checkFirstName(); 
+			//Verbindung zur Datenbank 
+			$servername = "141.19.142.9"; 
+			$username = "web_b-1"; 
+			$password = "Uo3oa7ac"; 
+			$dbname = ""; 
+		} 
+		//else {  //Nur zum probieren, später löschen: 
+		//	echo("HAAAAALLLLOOOOOOOOOORichtig: Vorname"); //Eigentlich Bestätigung mit Grünem Haken 
+		//}		
+	}
 
 		function checkLastname() { 
-		$nachnameregex = ""; 
+		$nachnameregex = "/^[A-ZÄÖÜ](?!.*([a-zA-Zäöüß -])\1{2})[a-zA-Zäöüß -]{0,19}$/"; 
 			//An den Server verschickte Daten in Arrays speichern 
 		$nachname= $_GET["lastname"]; 
 
-		if(!(preg_match($nachnameregex, "hallo"))) { 
-			exit("nein"); 
-		}else{
-			echo("danke"); 
+		if(!(preg_match($nachnameregex, $nachname))) { 
+			exit("EXITTTTTTTTT");   
 		}
-		}
-
+		//else{
+	//		echo("danke"); 
+	//	} 
+		} 
+		
+checkFirstName();  
+checkLastname(); 
 		?>
+
 			<h1 id="textBuchung">Buchung erfolgreich!</h1>
 			<img
 				src="resources/check.png"
