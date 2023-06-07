@@ -13,7 +13,7 @@
 			die("Fehler bei der Connection.".$connection->connect_error); // bis hier ist die Anbindung der Datenbank
 		}
 		
-		$sql = "SELECT Bild FROM Event";
+		$sql = "SELECT * FROM Event";
         $result = $connection->query($sql);
 
         if ($result->num_rows > 0) {
@@ -22,12 +22,12 @@
             while ($row = $result->fetch_assoc()) {
 
                 if($counter ==1){
-                    echo '<section id="focus"><a href="info.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></section>';
+                    echo '<section id="focus"><a href="info.php?event_id='.$row['Eventnummer'].'"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></section>';
                     echo '<section id="cardSection">';
                 }
                 
                 else {
-                echo '<div class="card"><a href="info.html"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></div>';
+                echo '<div class="card"><a href="info.php?event_id='.$row['Eventnummer'].'"><img src="data:image/png;base64,'.base64_encode($row['Bild']).'"></a></div>';
                 
             }
             $counter++;
