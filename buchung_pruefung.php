@@ -16,7 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             echo "Bitte fühlen sie alle Felder nach! ";
         } else {
             // Insert database
-            $servername = "141.19.142.9";
+            $servername = "localhost";
             $username = "web_b-1";
             $password = "Uo3oa7ac";
             $dbname = "Web_b1";
