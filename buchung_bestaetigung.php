@@ -47,13 +47,14 @@ if (checkVorname($vorname) && checkNachname($name)) {
 
 }
 
-$eventnummer = $_GET['event_id'];
+// $eventnummer = $_GET['event_id'];
+$eventnummer = 1000;
 
 $vip = $_GET['vip'];
 $fos = $_GET['fos'];
 $steh = $_GET['steh'];
 
-echo 'geht1';
+echo '$eventnummer';
 
 $sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 101 AND Eventnummer = 'event_id';";
 $pVer = $connection->query($sql);
