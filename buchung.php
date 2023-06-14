@@ -1,5 +1,5 @@
 <?php
-echo '<body id="body-buchung">';
+$bodyId = 'body-buchung';
 include 'header.php';
 echo '<main>';
 echo '<form id="buchungsForm" method="POST" action="bestaetigung.html">';
@@ -14,20 +14,11 @@ echo '<div class="form-box" id="firstname">';
 echo '<label for="vorname">Vorname:</label>';
 echo '<input type="text" name="firstname" id="vorname" required />';
 echo '<span class="falscheEingabe" id="falscherVorname">Bitte geben Sie einen gültigen Vornamen ein.</span>';
-echo '<span class="falscheEingabe" id="min2Buchst">Mindestens 2 Buchstaben</span>';
-echo '<span class="falscheEingabe" id="keineSonderzeichen">Keine Sonderzeichen eingeben</span>';
-echo '<span class="falscheEingabe" id="zweiWörter">Erstes Wort klein/groß beginnen, 2. Wort groß beginnen</span>';
-echo '<span class="falscheEingabe" id="einWort">Wort muss groß anfangen!</span>';
-echo '<span class="falscheEingabe" id="k2BH">Keine 2 Bindestrihe hintereinander</span>';
 echo '</div>';
 echo '<div class="form-box" id="lastname">';
 echo '<label for="nachname">Nachname:</label>';
 echo '<input type="text" name="lastname" id="nachname" required />';
-echo '<span class="falscheEingabe" id="min2Buchst">Mindestens 2 Buchstaben</span>';
-echo '<span class="falscheEingabe" id="keineSonderzeichen">Keine Sonderzeichen eingeben</span>';
-echo '<span class="falscheEingabe" id="zweiWörter">Erstes Wort klein/groß beginnen, 2. Wort groß beginnen</span>';
-echo '<span class="falscheEingabe" id="einWort">Wort muss groß anfangen!</span>';
-echo '<span class="falscheEingabe" id="k2BH">Keine 2 Bindestrihe hintereinander</span>';
+echo '<span class="falscheEingabe" id="falscherNachname">Mindestens 2 Buchstaben</span>';
 echo '</div>';
 echo '<div class="form-box" id="email">';
 echo '<label for="emailAdresse">E-Mail:</label>';
@@ -55,8 +46,7 @@ echo '</form>';
 echo '</main>';
 
 include 'footer.php';
-echo '<script src="eingabe_pruefung.js"></script>';
-echo '</body>';
+echo '<script src="eingabe_pruefen.js"></script>';
 
 $servername = "localhost";
 $username = "web_b-1";

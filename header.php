@@ -14,7 +14,7 @@ $header = <<<HTML
 		<link rel="icon" href="resources/favicon.ico" type="image/x-icon" />
 		<title>FlexEvent</title>
 	</head>
-	<body>
+	<body id ="$bodyId">
 		<header>
 			<div id="identity">
 				<div id="logo">
