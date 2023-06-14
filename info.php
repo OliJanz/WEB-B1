@@ -132,6 +132,7 @@ $servername ="localhost";	// Von hier Datenbank Verbindung herstellen
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
+                echo '<script src="eingabe_pruefenInfoForm.js"></script>';
             }
         }
         $connection->close();
