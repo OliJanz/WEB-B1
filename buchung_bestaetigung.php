@@ -54,17 +54,21 @@ $vip = $_GET['vip'];
 $fos = $_GET['fos'];
 $steh = $_GET['steh'];
 
-echo '$eventnummer';
+// echo $eventnummer;
 
-$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 101 AND Eventnummer = 'event_id';";
+$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 101 AND Eventnummer = $event_id;";
+echo '1';
 $pVer = $connection->query($sql);
+echo '2';
 $ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 101 AND Eventnummer = '?';");
+echo '3';
 $pErg = $pVer - $vip;
+echo '4';
 $ptsm->bind_param("ii", $pErg, $eventnummer);
 
 echo 'geht2';
 
-$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 102 AND Eventnummer = 'event_id';";
+$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 102 AND Eventnummer = $event_id;";
 $pVer = $connection->query($sql);
 $ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 102 AND Eventnummer = '?';");
 $pErg = $pVer - $fos;
@@ -72,7 +76,7 @@ $ptsm->bind_param("ii", $pErg, $eventnummer);
 
 echo 'geht3';
 
-$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 100 AND Eventnummer = 'event_id';";
+$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 100 AND Eventnummer = $event_id;";
 $pVer = $connection->query($sql);
 $ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 100 AND Eventnummer = '?';");
 $pErg = $pVer - $steh;
