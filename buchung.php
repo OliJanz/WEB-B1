@@ -2,7 +2,7 @@
 $bodyId = 'body-buchung';
 include 'header.php';
 echo '<main>';
-echo '<form id="buchungsForm" method="POST" action="bestaetigung.html">';
+echo '<form id="buchungsForm" method="POST" action="buchung_bestaetigung.php">';
 echo '<div class="formular">';
 echo '<h3 id="form-headline">';
 echo 'Zu Kontaktzwecken, sowie der Bestätigung des';
@@ -48,25 +48,3 @@ echo '</main>';
 include 'footer.php';
 echo '<script src="eingabe_pruefen.js"></script>';
 
-$servername = "localhost";
-$username = "web_b-1";
-$password = "Uo3oa7ac";
-$dbname = "Web_b1";
-
-$conn = new MySQLi($servername, $username, $password, $dbname);
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-
-$name = $_POST['lastname'];
-$vorname = $_POST['firstname']; 
-$email = $_POST['email']; 
-$ptsm = $conn->prepare("INSERT INTO Kunde (Name, Vorname, Email) VALUES (?, ?, ?)");
-
-$ptsm->bind_param("sss", $name, $vorname, $email);
-$ptsm->execute();
-
-$ptsm->close();
-$conn->close();
-?>
