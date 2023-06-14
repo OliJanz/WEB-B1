@@ -1,6 +1,10 @@
 <?php
 $bodyId = 'body-buchung';
 include 'header.php';
+$vip = $_GET['vip'];
+$fos = $_GET['fos'];
+$steh = $_GET['steh'];
+$eventID = $_GET['event_ID'];
 echo '<main>';
 echo '<form id="buchungsForm" method="POST" action="buchung_bestaetigung.php">';
 echo '<div class="formular">';
@@ -36,6 +40,13 @@ echo '<input type="checkbox" id="datenschutz" name="datenschutz" required />';
 echo '<label for="datenschutz">Ich habe die <a href="/datenschutz.html">Datenschutzverordnung</a> gelesen und akzeptiere diese</label>';
 echo '</div>';
 echo '</div>';
+// Versteckte Eingabefelder für $vip, $fos und $steh
+echo '<input type="hidden" name="vip" value="' . $vip . '">';
+echo '<input type="hidden" name="fos" value="' . $fos . '">';
+echo '<input type="hidden" name="steh" value="' . $steh . '">';
+echo '<input type="hidden" name="event_ID" value="' . $eventID . '">';
+//-----------------------------------------------------------
+echo '</form>';
 echo '<div class="form-box">';
 echo '<input type="hidden" name="validationResult" id="validationResult" value="" />';
 echo '<button type="submit" id="verbindlichBuchen">Verbindlich buchen</button>';
@@ -47,5 +58,4 @@ echo '</main>';
 
 include 'footer.php';
 echo '<script src="eingabe_pruefen.js"></script>';
-$eventnummer = $_GET['event_id'];
-$event_id = $_POST['event_id'];
+

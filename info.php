@@ -131,6 +131,9 @@ if ($event->num_rows > 0) {
         echo '<label for="steh">Stehplätze</label>';
         echo '</div>';
         echo '</div>';
+        // Id des Events über URL übertragen 
+        echo '<input type="hidden" name="event_ID" value="' . $event_id . '">';
+        //----------------------------------------------------------------------
         echo '<button type="submit" id="weiter">Weiter</button>';
         echo '<span class="falscheEingabe" id="einPlatz">Wählen Sie bitte mindestens einen Sitzplatz aus</span>';
         echo '</form>';
@@ -139,7 +142,7 @@ if ($event->num_rows > 0) {
         echo '</div>';
     }
 }
-$event_id = $_POST['event_id'];
+
 $connection->close();
 echo '</main>';
 include 'footer.php';

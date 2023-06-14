@@ -15,14 +15,13 @@ $name = trim($_POST['lastname']);
 $vorname = trim($_POST['firstname']);
 $email = $_POST['email'];
 $ptsm = $conn->prepare("INSERT INTO Kunde (Nachname, Vorname, Email) VALUES (?, ?, ?)");
-include "header.php";
+
 if (checkVorname($vorname) && checkNachname($name)) {
     //checkNachname($name)
     // && checkNachname($name)
     $ptsm->bind_param("sss", $name, $vorname, $email);
     $ptsm->execute();
     $ptsm->close();
-    $conn->close();
     echo '<main class="image-center">';
     echo '<h1 id="textBuchung">Buchung erfolgreich!</h1>
     <img  src="resources/check.png"
@@ -48,48 +47,67 @@ if (checkVorname($vorname) && checkNachname($name)) {
 }
 
 // $eventnummer = $_GET['event_id'];
-$eventnummer = 1000;
+$eventnummer = $_POST['event_ID'];
+$vip = $_POST['vip'];
+$fos = $_POST['fos'];
+$steh = $_POST['steh'];
 
-$vip = $_GET['vip'];
-$fos = $_GET['fos'];
-$steh = $_GET['steh'];
 
-// echo $eventnummer;
 
-$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 101 AND Eventnummer = $event_id;";
-echo '1';
-$pVer = $connection->query($sql);
-echo '2';
-$ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 101 AND Eventnummer = '?';");
-echo '3';
-$pErg = $pVer - $vip;
-echo '4';
-$ptsm->bind_param("ii", $pErg, $eventnummer);
-
-echo 'geht2';
-
-$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 102 AND Eventnummer = $event_id;";
-$pVer = $connection->query($sql);
-$ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 102 AND Eventnummer = '?';");
-$pErg = $pVer - $fos;
-$ptsm->bind_param("ii", $pErg, $eventnummer);
-
-echo 'geht3';
-
-$sql = "SELECT * FROM Verfügbarkeit WHERE ArtID = 100 AND Eventnummer = $event_id;";
-$pVer = $connection->query($sql);
-$ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 100 AND Eventnummer = '?';");
-$pErg = $pVer - $steh;
-$ptsm->bind_param("ii", $pErg, $eventnummer);
-
-echo 'geht4';
-
+// Abfrage und Aktualisierung für ArtID = 101
+$sql = "SELECT `Verfügbare Plätze` FROM Verfügbarkeit WHERE ArtID = 101 AND Eventnummer = ?";
+$ptsm = $conn->prepare($sql);
+$ptsm->bind_param("i", $eventnummer);
 $ptsm->execute();
-
-echo 'geht5';
-
-
+$result = $ptsm->get_result();
+$row = $result->fetch_assoc();
+$pVer = $row['Verfügbare Plätze'];
 $ptsm->close();
+
+$pErg = $pVer - $vip;
+
+$sql = "UPDATE Verfügbarkeit SET `Verfügbare Plätze` = ? WHERE ArtID = 101 AND Eventnummer = ?";
+$ptsm = $conn->prepare($sql);
+$ptsm->bind_param("ii", $pErg, $eventnummer);
+$ptsm->execute();
+$ptsm->close();
+
+// Abfrage und Aktualisierung für ArtID = 102
+$sql = "SELECT `Verfügbare Plätze` FROM Verfügbarkeit WHERE ArtID = 102 AND Eventnummer = ?";
+$ptsm = $conn->prepare($sql);
+$ptsm->bind_param("i", $eventnummer);
+$ptsm->execute();
+$result = $ptsm->get_result();
+$row = $result->fetch_assoc();
+$pVer = $row['Verfügbare Plätze'];
+$ptsm->close();
+
+$pErg = $pVer - $fos;
+
+$sql = "UPDATE Verfügbarkeit SET `Verfügbare Plätze` = ? WHERE ArtID = 102 AND Eventnummer = ?";
+$ptsm = $conn->prepare($sql);
+$ptsm->bind_param("ii", $pErg, $eventnummer);
+$ptsm->execute();
+$ptsm->close();
+
+// Abfrage und Aktualisierung für ArtID = 100
+$sql = "SELECT `Verfügbare Plätze` FROM Verfügbarkeit WHERE ArtID = 100 AND Eventnummer = ?";
+$ptsm = $conn->prepare($sql);
+$ptsm->bind_param("i", $eventnummer);
+$ptsm->execute();
+$result = $ptsm->get_result();
+$row = $result->fetch_assoc();
+$pVer = $row['Verfügbare Plätze'];
+$ptsm->close();
+
+$pErg = $pVer - $steh;
+
+$sql = "UPDATE Verfügbarkeit SET `Verfügbare Plätze` = ? WHERE ArtID = 100 AND Eventnummer = ?";
+$ptsm = $conn->prepare($sql);
+$ptsm->bind_param("ii", $pErg, $eventnummer);
+$ptsm->execute();
+$ptsm->close();
+
 $conn->close();
 
 
