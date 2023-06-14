@@ -47,4 +47,5 @@ echo '</main>';
 
 include 'footer.php';
 echo '<script src="eingabe_pruefen.js"></script>';
-
+$eventnummer = $_GET['event_id'];
+$event_id = $_POST['event_id'];
