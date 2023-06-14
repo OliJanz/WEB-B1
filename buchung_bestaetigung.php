@@ -1,4 +1,4 @@
-<?php 
+<?php
 include "header.php";
 $servername = "localhost";
 $username = "web_b-1";
@@ -12,12 +12,49 @@ if ($conn->connect_error) {
 }
 
 $name = $_POST['lastname'];
-$vorname = $_POST['firstname']; 
-$email = $_POST['email']; 
+$vorname = $_POST['firstname'];
+$email = $_POST['email'];
 $ptsm = $conn->prepare("INSERT INTO Kunde (Nachname, Vorname, Email) VALUES (?, ?, ?)");
 
 $ptsm->bind_param("sss", $name, $vorname, $email);
 $ptsm->execute();
+
+$eventnummer = $_GET['event_id'];
+
+$vip = $_GET['vip'];
+$fos = $_GET['fos'];
+$steh = $_GET['steh'];
+
+echo 'geht1';
+
+$sql = "SELECT * FROM Verfügbarkeit WHERE WHERE ArtID = 101 AND Eventnummer = 'event_id';";
+$pVer = $connection->query($sql);
+$ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 101 AND Eventnummer = '?';");
+$pErg = $pVer - $vip;
+$ptsm->bind_param("a", $pErg, $eventnummer);
+
+echo 'geht2';
+
+$sql = "SELECT * FROM Verfügbarkeit WHERE WHERE ArtID = 102 AND Eventnummer = 'event_id';";
+$pVer = $connection->query($sql);
+$ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 102 AND Eventnummer = '?';");
+$pErg = $pVer - $fos;
+$ptsm->bind_param("b", $pErg, $eventnummer);
+
+echo 'geht3';
+
+$sql = "SELECT * FROM Verfügbarkeit WHERE WHERE ArtID = 100 AND Eventnummer = 'event_id';";
+$pVer = $connection->query($sql);
+$ptsm = $conn->prepare("UPDATE Verfügbarkeit SET Verfügbare Plätze = '?' WHERE ArtID = 100 AND Eventnummer = '?';");
+$pErg = $pVer - $steh;
+$ptsm->bind_param("c", $pErg, $eventnummer);
+
+echo 'geht4';
+
+$ptsm->execute();
+
+echo 'geht5';
+
 
 $ptsm->close();
 $conn->close();

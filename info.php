@@ -101,44 +101,46 @@ if ($event->num_rows > 0) {
         $gesamteVerfuegbarkeit = "SELECT Verfügbarkeit.`Anzahl der Plätze` 
                 FROM Verfügbarkeit WHERE Verfügbarkeit.Eventnummer = $event_id
                 AND Verfügbarkeit.ArtID = $ticketart";
-                $ergebnis=$connection->query($gesamteVerfuegbarkeit);
-                if($ergebnis->num_rows>0){
-                    echo '<span>';
-                    $zeile = $ergebnis->fetch_assoc();
-                echo $zeile['Anzahl der Plätze'];
-                echo '</span>';}
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-                echo '<img id="infoImage" src="data:image/png;base64,'.base64_encode($row['Bild']).'"/>';
-                echo '</div>';
-                echo '<div id="infoBottom">';
-                echo '<img src ="resources/stadion.png" id=stadion>';
-                echo '<form id="infoForm" action="buchung.php">';
-                echo '<h4>Wählen Anzahl und Art der zu buchenden Plätze:</h4>';
-                echo '<div id="inputs">';
-                echo '<div id="vip">';
-                echo '<input type="number" placeholder="0" min="0" name="vip" class="anzahlPlaetze id="vipInput">';
-                echo '<label for="vip">VIP Plätze</label>';
-                echo '</div>';
-                echo '<div id="fos">';
-                echo '<input type="number" placeholder="0" min="0" name="fos" class="anzahlPlaetze id="fosInput">';
-                echo '<label for="fos">Front of Stage Plätze</label>';
-                echo '</div>';
-                echo '<div id="steh">';
-                echo '<input type="number" placeholder="0" min="0" name="steh" class="anzahlPlaetze id="stehInput">';
-                echo '<label for="steh">Stehplätze</label>';
-                echo '</div>';
-                echo '</div>';
-                echo '<button type="submit" id="weiter">Weiter</button>';
-                echo '<span class="falscheEingabe" id="einPlatz">Wählen Sie bitte mindestens einen Sitzplatz aus</span>';
-                echo '</form>';
-                echo '</div>';
-                echo '</div>';
-                echo '</div>';
-            }
+        $ergebnis = $connection->query($gesamteVerfuegbarkeit);
+        if ($ergebnis->num_rows > 0) {
+            echo '<span>';
+            $zeile = $ergebnis->fetch_assoc();
+            echo $zeile['Anzahl der Plätze'];
+            echo '</span>';
         }
-        $connection->close();
-        echo '</main>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+        echo '<img id="infoImage" src="data:image/png;base64,' . base64_encode($row['Bild']) . '"/>';
+        echo '</div>';
+        echo '<div id="infoBottom">';
+        echo '<img src ="resources/stadion.png" id=stadion>';
+        echo '<form id="infoForm" action="buchung.php">';
+        echo '<h4>Wählen Anzahl und Art der zu buchenden Plätze:</h4>';
+        echo '<div id="inputs">';
+        echo '<div id="vip">';
+        echo '<input type="number" placeholder="0" min="0" name="vip" class="anzahlPlaetze id="vipInput">';
+        echo '<label for="vip">VIP Plätze</label>';
+        echo '</div>';
+        echo '<div id="fos">';
+        echo '<input type="number" placeholder="0" min="0" name="fos" class="anzahlPlaetze id="fosInput">';
+        echo '<label for="fos">Front of Stage Plätze</label>';
+        echo '</div>';
+        echo '<div id="steh">';
+        echo '<input type="number" placeholder="0" min="0" name="steh" class="anzahlPlaetze id="stehInput">';
+        echo '<label for="steh">Stehplätze</label>';
+        echo '</div>';
+        echo '</div>';
+        echo '<button type="submit" id="weiter">Weiter</button>';
+        echo '<span class="falscheEingabe" id="einPlatz">Wählen Sie bitte mindestens einen Sitzplatz aus</span>';
+        echo '</form>';
+        echo '</div>';
+        echo '</div>';
+        echo '</div>';
+    }
+}
+$event_id = $_POST['event_id'];
+$connection->close();
+echo '</main>';
 include 'footer.php';
 ?>
