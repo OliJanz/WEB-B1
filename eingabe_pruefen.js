@@ -54,6 +54,12 @@ function checkVorname (vornameInput){
 }
 
 function checkNachname(name){
+    //Hier prüft man die Länge des Namens.
+ if(name.length <= 1){
+    document.getElementById("falscherNachname").innerHTML = "Nachname zu kurz. Der Nachname muss <br> mindestens 2 Buchstaben enthalten";
+    document.getElementById("falscherNachname").style.display = "block";
+    return false;
+}
  //prüfen Nachname, darf "van" am Anfang haben oder Großbuchstabe und nach "van" muss ein Großbuchstabe folgen
 
  if(!startsWithUpperCase(name) && !name.match(/^van [A-Z]/)){
@@ -72,6 +78,7 @@ function checkNachname(name){
     document.getElementById("falscherNachname").style.display ="block";
     return false;
  }
+ 
  document.getElementById("falscherNachname").style.display ="none";
  return true;
 
