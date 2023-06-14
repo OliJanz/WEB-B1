@@ -127,10 +127,12 @@ $servername ="localhost";	// Von hier Datenbank Verbindung herstellen
                 echo '</div>';
                 echo '<button type="submit" id="weiter">Weiter</button>';
                 echo '<span class="falscheEingabe" id="einPlatz">Wählen Sie bitte mindestens einen Sitzplatz aus</span>';
+                echo '<span class="falscheEingabe" id="einPlatzAuswahl">Bitte wählen Sie eine Art von Ticket</span>';
                 echo '</form>';
                 echo '</div>';
                 echo '</div>';
                 echo '</div>';
+                echo '<script src="eingabe_pruefenInfoForm.js"></script>';
             }
         }
         $connection->close();
