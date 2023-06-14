@@ -109,7 +109,7 @@ $servername ="localhost";	// Von hier Datenbank Verbindung herstellen
                 echo '</div>';
                 echo '<div id="infoBottom">';
                 echo '<img src ="resources/stadion.png" id=stadion>';
-                echo '<form id="infoForm" action="buchung.html">';
+                echo '<form id="infoForm" action="buchung.php">';
                 echo '<h4>Wählen Anzahl und Art der zu buchenden Plätze:</h4>';
                 echo '<div id="inputs">';
                 echo '<div id="vip">';
